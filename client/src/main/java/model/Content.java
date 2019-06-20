@@ -1,5 +1,7 @@
 package model;
 
-public interface Content {
+import java.io.Serializable;
+
+public interface Content extends Serializable {
 
 }

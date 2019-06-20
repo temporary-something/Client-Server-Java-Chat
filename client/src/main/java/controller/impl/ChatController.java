@@ -37,11 +37,7 @@ public class ChatController implements ChatFunctionalities {
 
     @Override
     public void disconnect() {
-        try {
-            serverServices.disconnect();
-        } catch (IOException e) {
-            logger.error(e.getMessage());
-        }
+        serverServices.disconnect();
     }
 
     @Override
