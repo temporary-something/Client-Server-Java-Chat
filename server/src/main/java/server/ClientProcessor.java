@@ -13,10 +13,10 @@ public class ClientProcessor implements Services, Runnable {
     private Socket sock;
     private ObjectOutputStream writer = null;
     private ObjectInputStream reader = null;
-    private final Collection<User> users = Collections.synchronizedList(new LinkedList<User>());
+    private final Collection<User> users = Collections.synchronizedList(new LinkedList<>());
     private User user;
-    private Map<Long, List<FileContent>> mapFileContent = new HashMap<Long, List<FileContent>>();
-    private Map<Long, String> mapFileNames = new HashMap<Long, String>();
+    private Map<Long, List<FileContent>> mapFileContent = new HashMap<>();
+    private Map<Long, String> mapFileNames = new HashMap<>();
 
     private boolean isRunning = true;
 
