@@ -25,13 +25,11 @@ public class User extends BasePojo {
         return name;
     }
 
-    public User clone() {
-        return new User(ipAddress, name);
-    }
-
     @Override
     public String toString() {
-        return name;
+        return "User{" +
+                "id= " + getId() +
+                ", name='" + name + '\'' +
+                '}';
     }
-
 }

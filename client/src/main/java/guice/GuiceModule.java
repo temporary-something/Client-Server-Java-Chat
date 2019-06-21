@@ -18,11 +18,11 @@ public class GuiceModule extends AbstractModule {
 
     @Override
     protected void configure() {
-        bind(LoginView.class).to(LoginViewImpl.class);
-        bind(ChatView.class).to(ChatViewImpl.class);
-        bind(LoginFunctionalities.class).to(LoginController.class);
-        bind(ChatFunctionalities.class).to(ChatController.class);
-        bind(InputStreamReader.class).to(InputStreamReaderImpl.class);
+        bind(LoginView.class).to(LoginViewImpl.class).asEagerSingleton();
+        bind(ChatView.class).to(ChatViewImpl.class).asEagerSingleton();
+        bind(LoginFunctionalities.class).to(LoginController.class).asEagerSingleton();
+        bind(ChatFunctionalities.class).to(ChatController.class).asEagerSingleton();
+        bind(InputStreamReader.class).to(InputStreamReaderImpl.class).asEagerSingleton();
         bind(ServerServices.class).to(ServerServicesImpl.class).asEagerSingleton();
     }
 }

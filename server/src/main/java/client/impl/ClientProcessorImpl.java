@@ -114,6 +114,7 @@ public class ClientProcessorImpl implements ClientProcessor {
         user = User.newInstance(socket.getInetAddress().getHostAddress(), ((Credentials)request.getContent()).getUsername());
         server.addUser(user, this, users);
 
+        System.out.println(buildResponse(ResponseType.CONNECTED, ContextContent.newInstance((List<User>)users)));
         this.sendResponse(buildResponse(ResponseType.CONNECTED, ContextContent.newInstance((List<User>)users)));
 
         //Sending a Response to all the known users so that they know about the current user
