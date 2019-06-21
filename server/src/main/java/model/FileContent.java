@@ -1,8 +1,8 @@
 package model;
 
-import java.util.Arrays;
+public class FileContent implements Content, Comparable<FileContent> {
 
-public class FileContent implements Content {
+    private static final long serialVersionUID = 902393113162323186L;
 
     public static final transient int MAX_BYTE_SIZE = 1024;
 
@@ -46,11 +46,15 @@ public class FileContent implements Content {
     }
 
     @Override
+    public int compareTo(FileContent o) {
+        return Long.compare(chunkNumber, o.chunkNumber);
+    }
+
+    @Override
     public String toString() {
         return "FileContent{" +
                 "fileId=" + fileId +
                 ", chunkNumber=" + chunkNumber +
-                ", data=" + Arrays.toString(data) +
                 '}';
     }
 }

@@ -3,6 +3,7 @@ package controller;
 import model.*;
 
 import java.io.File;
+import java.util.List;
 
 public interface ChatFunctionalities {
 
@@ -21,5 +22,6 @@ public interface ChatFunctionalities {
     void addUser(User user);
     void removeUser(User user);
     void initializeContext(ContextContent context);
-    void requestFile(User source, long fileId);
+    void requestFile(User source, long fileId, String absolutePath);
+    void receiveFile(FileDescriptor fileDescriptor, List<FileContent> list);
 }

@@ -2,6 +2,8 @@ package model;
 
 public class FileDescriptor extends FileBasicInformation {
 
+    private static final long serialVersionUID = -7809127402086776713L;
+
     private long chunksTotalNumber;
     private String fileName;
 

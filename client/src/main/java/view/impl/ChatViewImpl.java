@@ -62,19 +62,9 @@ public class ChatViewImpl implements ChatView {
         this.listMessages.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.getMessageContent() instanceof FileMessageContent) {
                 //Send Request to the server to start downloading the file.
-                final Task<Void> task = new Task<Void>() {
-                    @Override
-                    protected Void call() {
-                        chatController.requestFile(selectedUser, ((FileMessageContent)newValue.getMessageContent()).getFileId());
-                        return null;
-                    }
-                };
-                task.setOnSucceeded(event -> logger.info("Sending Message Succeeded ..."));
-                task.setOnFailed(event -> logger.info("Sending Message Failed ..."));
-
-                Thread t = new Thread(task);
-                t.setDaemon(true);
-                t.start();
+                requestFile(
+                        newValue.getUser(),
+                        ((FileMessageContent)newValue.getMessageContent()).getFileId());
             }
         });
 
@@ -100,7 +90,9 @@ public class ChatViewImpl implements ChatView {
         };
         task.setOnSucceeded(event1 -> {
             txtMessage.clear();
-            listMessages.getItems().add(task.getValue());
+            final MessageContainer container = task.getValue();
+            container.setUser(null);
+            listMessages.getItems().add(container);
         });
         task.setOnFailed(event12 -> logger.info("Sending Message Failed ..."));
 
@@ -148,7 +140,6 @@ public class ChatViewImpl implements ChatView {
 
     @Override
     public void initializeContext(final ContextContent context) {
-        System.err.println("Setting Users ...");
         final Task<ContextContent> task = new Task<ContextContent>() {
             @Override
             protected ContextContent call() {
@@ -241,8 +232,29 @@ public class ChatViewImpl implements ChatView {
 
     @Override
     public void fileSent(final MessageContainer fileMessage) {
-        fileMessage.setUser(null);
-        this.receiveMessage(fileMessage);
+        final Task<MessageContainer> task = new Task<MessageContainer>() {
+            @Override
+            protected MessageContainer call() {
+                return fileMessage;
+            }
+        };
+        task.setOnSucceeded(event1 -> {
+            final MessageContainer container = task.getValue();
+            container.setUser(null);
+            listMessages.getItems().add(container);
+        });
+        task.setOnFailed(event12 -> logger.info("Adding FileMessage Failed ..."));
+
+        this.startTask(task);
+    }
+
+    @Override
+    public void requestFile(User user, long fileId) {
+        final File file = fileChooser.showSaveDialog(null);
+        if (file != null) {
+            Thread t = new Thread(() -> chatController.requestFile(user, fileId, file.getAbsolutePath()));
+            t.start();
+        }
     }
 
     private void startTask(final Task task) {

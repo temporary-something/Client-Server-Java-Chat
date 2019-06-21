@@ -56,8 +56,6 @@ public class ServerServicesImpl implements ServerServices {
     @Override
     public ClientProcessor findClient(long id) {
         synchronized (clients) {
-            System.out.println("Clients : " + clients);
-            System.out.println("Id : " + id);
             return clients.get(id);
         }
     }

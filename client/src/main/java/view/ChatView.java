@@ -16,4 +16,5 @@ public interface ChatView extends Initializable {
     void addUser(User user);
     void removeUser(User user);
     void fileSent(MessageContainer fileMessage);
+    void requestFile(User user, long fileId);
 }

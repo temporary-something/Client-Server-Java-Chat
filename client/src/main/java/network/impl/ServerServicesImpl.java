@@ -13,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.*;
 
 public class ServerServicesImpl implements ServerServices, InputStreamListener {
 
@@ -24,12 +25,20 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     private Socket connection = null;
     private ObjectOutputStream writer = null;
 
+    //Files sent/to send.
+    private Map<Long, File> files;
+
+    //Files received/to receive.
+    private Map<Long, List<FileContent>> filesContent = new HashMap<>();
+    private Map<Long, FileDescriptor> filesDescription = new HashMap<>();
+
     private Request buildRequest(final RequestType type, Content content, final User destination) {
         return Request.newInstance(type, content, destination);
     }
 
     private synchronized void sendRequest(@NotNull final Request request) throws IOException {
         if (writer != null) {
+            logger.info("Request : " + request);
             writer.writeObject(request);
             writer.flush();
         }
@@ -59,10 +68,35 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
                             (MessageContent)response.getContent()));
                 break;
             }
+            case PREPARE_RECEIVE_FILE: {
+                try {
+                    prepareReceiveFile((FileDescriptor) response.getContent(), response.getSource());
+                } catch (IOException e) {
+                    logger.error(e);
+                }
+                break;
+            }
             case FILE_MESSAGE: {
+                chatController.receiveMessage(
+                        MessageContainer.newInstance(
+                                response.getSource(),
+                                (FileMessageContent)response.getContent()));
+                break;
+            }
+            case FILE_CHUNK: {
+                receiveFile((FileContent) response.getContent());
                 break;
             }
             case MESSAGE_SENT: {
+                logger.info("Message Sent.");
+                break;
+            }
+            case CAN_SEND_FILE: {
+                try {
+                    sendFile(response.getSource(), ((FileBasicInformation)response.getContent()).getFileId());
+                } catch (IOException e) {
+                    logger.error(e);
+                }
                 break;
             }
             case FILE_SENT: {
@@ -70,6 +104,10 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
                         MessageContainer.newInstance(
                             response.getSource(),
                             (FileMessageContent)response.getContent()));
+                break;
+            }
+            case INSUFFICIENT_MEMORY: {
+                logger.error("Insufficient Memory.");
                 break;
             }
             case DESTINATION_NOT_FOUND: {
@@ -115,7 +153,7 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
             isReader.close();
             this.connection.close();
         } catch (IOException e) {
-            logger.error(e.getMessage());
+            logger.error(e);
         }
     }
 
@@ -125,23 +163,40 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     }
 
     @Override
-    public void sendFile(User destination, File file) throws IOException  {
+    public void checkSendFile(User destination, File file) throws IOException  {
         final FileDescriptor fileDescriptor = FileDescriptor.newInstance(
-                file.length()/ FileContent.MAX_BYTE_SIZE + 1,
+                file.length()/FileContent.MAX_BYTE_SIZE + 1,
                 file.getName());
-        this.sendRequest(this.buildRequest(RequestType.SEND_FILE, fileDescriptor, destination));
+        this.sendRequest(this.buildRequest(RequestType.PREPARE_SEND_FILE, fileDescriptor, destination));
 
+        if (this.files == null) this.files = new HashMap<>();
+        files.put(fileDescriptor.getFileId(), file);
+    }
+
+    @Override
+    public void sendFile(User destination, long fileId) throws IOException  {
         int read = 0, chunkNumber = 1;
+        final File file = files.get(fileId);
+
+        if (file == null) {
+            logger.error("Unknown fileId received.");
+            return;
+        }
+
         final FileInputStream fis = new FileInputStream(file);
         while (read != -1 && !connection.isClosed()) {
             byte[] bytes = new byte[FileContent.MAX_BYTE_SIZE];
             read = fis.read(bytes, 0, FileContent.MAX_BYTE_SIZE);
             if (read != -1) {
+                if (read != bytes.length) {
+                    bytes = Arrays.copyOf(bytes, read);
+                }
                 final FileContent fileContent = FileContent.newInstance(
-                        fileDescriptor.getFileId(),
+                        fileId,
                         chunkNumber,
                         bytes);
                 this.sendRequest(this.buildRequest(RequestType.SEND_FILE, fileContent, destination));
+                chunkNumber++;
             }
         }
     }
@@ -149,8 +204,30 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     @Override
     public void requestFile(User source, long fileId) throws IOException  {
         this.sendRequest(this.buildRequest(
-                RequestType.REQUEST_FILE,
-                FileDescriptor.newInstance(fileId),
+                RequestType.PREPARE_REQUEST_FILE,
+                FileBasicInformation.newInstance(fileId),
                 source));
+    }
+
+    @Override
+    public void prepareReceiveFile(FileDescriptor fileDescriptor, User source) throws IOException {
+        //TODO: Test if there's enough memory available before sending the response.
+        filesDescription.put(fileDescriptor.getFileId(), fileDescriptor);
+        filesContent.put(fileDescriptor.getFileId(), new LinkedList<>());
+        this.sendRequest(buildRequest(
+                RequestType.REQUEST_FILE,
+                FileBasicInformation.newInstance(fileDescriptor.getFileId()),
+                source));
+    }
+
+    @Override
+    public void receiveFile(FileContent fileContent) {
+        final List<FileContent> list = filesContent.get(fileContent.getFileId());
+        list.add(fileContent);
+
+        final FileDescriptor fileDescriptor = filesDescription.get(fileContent.getFileId());
+        if (list.size() == fileDescriptor.getChunksTotalNumber()) {
+            chatController.receiveFile(fileDescriptor, list);
+        }
     }
 }

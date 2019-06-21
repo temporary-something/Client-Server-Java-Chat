@@ -1,17 +1,18 @@
 package network;
 
-import model.Credentials;
-import model.MessageContainer;
-import model.User;
+import model.*;
 
 import java.io.File;
 import java.io.IOException;
 
 public interface ServerServices {
-    
+
     void connect(Credentials credentials, String host, int port) throws IOException;
     void disconnect();
     void sendMessage(MessageContainer message) throws IOException ;
-    void sendFile(User destination, File file) throws IOException ;
+    void checkSendFile(User destination, File file) throws IOException ;
+    void sendFile(User destination, long fileId) throws IOException ;
     void requestFile(User source, long fileId) throws IOException ;
+    void prepareReceiveFile(FileDescriptor fileDescriptor, User source) throws IOException;
+    void receiveFile(FileContent fileContent);
 }

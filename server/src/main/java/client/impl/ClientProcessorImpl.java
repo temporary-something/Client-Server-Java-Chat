@@ -3,15 +3,14 @@ package client.impl;
 import client.ClientProcessor;
 import com.sun.istack.internal.NotNull;
 import model.*;
+import model.FileDescriptor;
 import model.enums.ResponseType;
 import server.ServerServices;
 
 import java.io.*;
 import java.net.Socket;
 import java.net.SocketException;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class ClientProcessorImpl implements ClientProcessor {
 
@@ -21,6 +20,8 @@ public class ClientProcessorImpl implements ClientProcessor {
     private ObjectInputStream reader;
 
     private final Collection<User> users = new LinkedList<>();
+    private Map<Long, List<FileContent>> filesContent = new HashMap<>();
+    private Map<Long, FileDescriptor> filesDescription = new HashMap<>();
 
     private User user;
 
@@ -33,6 +34,10 @@ public class ClientProcessorImpl implements ClientProcessor {
 
     private Response buildResponse(final ResponseType type, final Content content) {
         return Response.newInstance(type, content, user);
+    }
+
+    private Response buildResponse(final ResponseType type, final Content content, final User newOrigin) {
+        return Response.newInstance(type, content, newOrigin);
     }
 
     public synchronized boolean sendResponse(@NotNull final Response response) throws IOException {
@@ -77,8 +82,16 @@ public class ClientProcessorImpl implements ClientProcessor {
                         sendMessage(request);
                         break;
                     }
+                    case PREPARE_SEND_FILE: {
+                        checkFile(request);
+                        break;
+                    }
                     case SEND_FILE: {
                         handleFile(request);
+                        break;
+                    }
+                    case PREPARE_REQUEST_FILE: {
+                        prepareSendFile(request);
                         break;
                     }
                     case REQUEST_FILE: {
@@ -171,19 +184,23 @@ public class ClientProcessorImpl implements ClientProcessor {
 
     @Override
     public void sendMessage(Request request) throws IOException {
-        //Sending the Message to the destination.
-        final Response message = buildResponse(ResponseType.MESSAGE, request.getContent());
-
         if (request.getDestination() == null) {
             handleError(ResponseType.WRONG_PARAMETERS);
             return;
         }
 
-        final ClientProcessor client = server.findClient(request.getDestination().getId());
+        this.sendMessage(request.getContent(), request.getDestination(), ResponseType.MESSAGE, ResponseType.MESSAGE_SENT);
+    }
+
+    private void sendMessage(Content content, User destination, ResponseType type, ResponseType successResponseType) throws IOException {
+        final ClientProcessor client = server.findClient(destination.getId());
+
+        //Sending the Message to the destination.
+        final Response message = buildResponse(type, content);
 
         if (client != null && client.sendResponse(message)) {
             //Sending Success Response to the User.
-            sendResponse(buildResponse(ResponseType.MESSAGE_SENT, null));
+            sendResponse(buildResponse(successResponseType, content));
         } else {
             //Sending Failure Response to the User.
             handleError(ResponseType.DESTINATION_NOT_FOUND);
@@ -191,13 +208,87 @@ public class ClientProcessorImpl implements ClientProcessor {
     }
 
     @Override
-    public void handleFile(Request request) throws IOException {
+    public void checkFile(Request request) throws IOException {
+        final FileDescriptor descriptor = (FileDescriptor)request.getContent();
+        if (descriptor.getChunksTotalNumber() < ClientProcessor.FILE_SIZE_THRESHOLD) {
+            //File size inferior to the maximum authorized, tell the client to start sending the file.
+            this.filesDescription.put(descriptor.getFileId(), descriptor);
+            sendResponse(buildResponse(
+                    ResponseType.CAN_SEND_FILE,
+                    FileBasicInformation.newInstance(descriptor.getFileId()),
+                    request.getDestination()));
+        } else {
+            //File is too big, tell the client to not send the file.
+            sendResponse(buildResponse(ResponseType.INSUFFICIENT_MEMORY, null));
+        }
+    }
 
+    @Override
+    public void handleFile(Request request) throws IOException {
+        final FileContent fileContent = (FileContent)request.getContent();
+        if (fileContent == null || !filesDescription.containsKey(fileContent.getFileId())) {
+            handleError(ResponseType.WRONG_PARAMETERS);
+            return;
+        }
+
+        if (!filesContent.containsKey(fileContent.getFileId())) {
+            filesContent.put(fileContent.getFileId(), new LinkedList<>());
+        }
+
+        final List<FileContent> list = filesContent.get(fileContent.getFileId());
+        list.add(fileContent);
+
+        final FileDescriptor fileDescriptor = filesDescription.get(fileContent.getFileId());
+        if (list.size() == fileDescriptor.getChunksTotalNumber()) {
+            //If all the parts are received, send a FileMessage to the destination, and tell
+            // the sending user that the file has been sent.
+            sendMessage(
+                    FileMessageContent.newInstance(fileDescriptor),
+                    request.getDestination(),
+                    ResponseType.FILE_MESSAGE,
+                    ResponseType.FILE_SENT);
+        }
+    }
+
+    @Override
+    public void prepareSendFile(Request request) throws IOException {
+        final ClientProcessor client = (request.getDestination() == null)
+                ? this
+                : server.findClient(request.getDestination().getId());
+
+        final FileDescriptor fileDescriptor = client.getFilesDescription().get(((FileBasicInformation)request.getContent()).getFileId());
+        if (fileDescriptor == null) {
+            handleError(ResponseType.WRONG_PARAMETERS);
+            return;
+        }
+
+        sendResponse(buildResponse(
+                ResponseType.PREPARE_RECEIVE_FILE,
+                fileDescriptor,
+                (request.getDestination() == null) ? user : request.getDestination()));
     }
 
     @Override
     public void sendFile(Request request) throws IOException {
+        final FileBasicInformation fileBasicInformation = (FileBasicInformation)request.getContent();
+        final ClientProcessor client = server.findClient(request.getDestination().getId());
 
+        final FileDescriptor fileDescriptor = client.getFilesDescription().get(fileBasicInformation.getFileId());
+
+        if (fileDescriptor == null || request.getDestination() == null) {
+            handleError(ResponseType.WRONG_PARAMETERS);
+            return;
+        }
+
+        final List<FileContent> list = client.getFilesContent().get(fileBasicInformation.getFileId());
+        if (list.size() != fileDescriptor.getChunksTotalNumber()) {
+            handleError(ResponseType.WRONG_PARAMETERS);
+            return;
+        }
+
+        for (FileContent fc : list) {
+            sendResponse(buildResponse(ResponseType.FILE_CHUNK, fc));
+        }
     }
 
     @Override
@@ -235,5 +326,13 @@ public class ClientProcessorImpl implements ClientProcessor {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Map<Long, List<FileContent>> getFilesContent() {
+        return filesContent;
+    }
+
+    public Map<Long, FileDescriptor> getFilesDescription() {
+        return filesDescription;
     }
 }

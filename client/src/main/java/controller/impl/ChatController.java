@@ -9,7 +9,12 @@ import org.apache.logging.log4j.Logger;
 import view.ChatView;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ChatController implements ChatFunctionalities {
 
@@ -18,21 +23,27 @@ public class ChatController implements ChatFunctionalities {
     @Inject private ChatView chatView;
     @Inject private ServerServices serverServices;
 
+    private Map<Long, String> toSaveFilePaths = new HashMap<>();
 
     @Override
     public MessageContainer sendMessage(final User destination, final String message) {
         final MessageContainer messageContainer = MessageContainer.newInstance(destination, MessageContent.newInstance(message));
         try {
             serverServices.sendMessage(messageContainer);
+            return messageContainer;
         } catch (IOException e) {
-            logger.error(e.getMessage());
+            logger.error(e);
+            return null;
         }
-        return messageContainer;
     }
 
     @Override
     public void sendFile(final User destination, final File file) {
-
+        try {
+            serverServices.checkSendFile(destination, file);
+        } catch (IOException e) {
+            logger.error(e);
+        }
     }
 
     @Override
@@ -66,11 +77,28 @@ public class ChatController implements ChatFunctionalities {
     }
 
     @Override
-    public void requestFile(User source, long fileId) {
+    public void requestFile(User source, long fileId, String absolutePath) {
         try {
+            toSaveFilePaths.put(fileId, absolutePath);
             serverServices.requestFile(source, fileId);
         } catch (IOException e) {
-            logger.error(e.getMessage());
+            logger.error(e);
+        }
+    }
+
+    @Override
+    public void receiveFile(FileDescriptor fileDescriptor, List<FileContent> list) {
+        logger.info("File Received : " + fileDescriptor);
+        Collections.sort(list);
+        try {
+            final File file = new File(toSaveFilePaths.get(fileDescriptor.getFileId()));
+            final FileOutputStream os = new FileOutputStream(file);
+            for (FileContent fc: list) {
+                os.write(fc.getData());
+            }
+            os.close();
+        } catch (IOException e) {
+            logger.error(e);
         }
     }
 }
