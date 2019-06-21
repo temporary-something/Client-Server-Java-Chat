@@ -199,6 +199,7 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
                 chunkNumber++;
             }
         }
+        fis.close();
     }
 
     @Override
