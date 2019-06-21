@@ -19,7 +19,22 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/view/impl/ChatViewImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="67">
+              <caret line="159" column="70" selection-start-line="159" selection-start-column="70" selection-end-line="159" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5545#5697#0" expanded="true" />
+                <element signature="e#5696#5697#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -58,6 +73,7 @@
       <find>listusers</find>
       <find>!</find>
       <find>disc</find>
+      <find>listUsers</find>
     </findStrings>
     <replaceStrings>
       <replace>List&lt;User&gt;</replace>
@@ -101,7 +117,6 @@
         <option value="$PROJECT_DIR$/src/main/java/view/impl/ChatListCell.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/ChatView.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/impl/LoginViewImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/impl/ChatViewImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/impl/InputStreamReaderImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/guice/GuiceModule.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/InputStreamReader.java" />
@@ -121,6 +136,7 @@
         <option value="$PROJECT_DIR$/src/main/java/network/impl/ServerServicesImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/impl/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ContextContent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/impl/ChatViewImpl.java" />
       </list>
     </option>
   </component>
@@ -249,8 +265,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="client" />
       <method v="2">
@@ -308,13 +324,13 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Client" />
       <item itemvalue="Maven.clean" />
       <item itemvalue="Maven.generate jar" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -344,14 +360,14 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12013423" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22550336" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43201134" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43201134" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -368,14 +384,14 @@
       <window_info anchor="right" id="Palette&#9;" order="5" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24026845" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22550336" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43201134" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43201134" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -596,16 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/impl/ChatViewImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2782">
-          <caret line="61" column="57" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Request.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -716,6 +722,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/impl/ChatViewImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="159" column="70" selection-start-line="159" selection-start-column="70" selection-end-line="159" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5545#5697#0" expanded="true" />
+            <element signature="e#5696#5697#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
@@ -774,6 +792,7 @@
             <option name="proportions">
               <list>
                 <option value="0.20114942" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

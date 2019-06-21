@@ -48,6 +48,7 @@ public class ChatViewImpl implements ChatView {
 
     @Override
     public void initialize(final URL location, final ResourceBundle resources) {
+        System.out.println("here : " + this);
         if (this.listUsers.getItems() == null) this.listUsers.setItems(FXCollections.observableArrayList());
         this.listMessages.setItems(FXCollections.observableArrayList());
 
@@ -157,6 +158,7 @@ public class ChatViewImpl implements ChatView {
         };
 
         task.setOnSucceeded(event -> {
+            if (listUsers == null) {System.out.println(":o " + this); return;}
             if (listUsers.getItems() == null) listUsers.setItems(FXCollections.observableArrayList());
             final List<User> users = listUsers.getItems();
 

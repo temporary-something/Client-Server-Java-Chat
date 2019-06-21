@@ -1,4 +1,6 @@
 import server.Server;
+import server.ServerServices;
+import server.impl.ServerServicesImpl;
 
 public class Main {
 
@@ -6,7 +8,7 @@ public class Main {
         final String host = "0.0.0.0";
         final int port = 6666;
 
-        Server server = new Server(host, port);
+        ServerServices server = new ServerServicesImpl(host, port);
         server.open();
         System.out.println("Server Initialized.");
     }

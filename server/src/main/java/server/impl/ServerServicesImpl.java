@@ -6,11 +6,11 @@ import model.User;
 import server.ServerServices;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.LinkedList;
 
 public class ServerServicesImpl implements ServerServices {
 
@@ -19,6 +19,14 @@ public class ServerServicesImpl implements ServerServices {
 
     private static final HashMap<Long, User> users = new HashMap<>();
     private static final HashMap<Long, ClientProcessor> clients = new HashMap<>();
+
+    public ServerServicesImpl(String host, int port){
+        try {
+            server = new ServerSocket(port, 100, InetAddress.getByName(host));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void open() {

@@ -24,7 +24,7 @@ public class ClientProcessorImpl implements ClientProcessor {
 
     private User user;
 
-    private boolean isRunning;
+    private boolean isRunning = true;
 
     public ClientProcessorImpl(final Socket socket, final ServerServices server) {
         this.socket = socket;
@@ -94,7 +94,7 @@ public class ClientProcessorImpl implements ClientProcessor {
                     }
                 }
             }
-        } catch(SocketException e){
+        } catch(SocketException e) {
             System.err.println("Connexion Interrupted.");
             e.printStackTrace();
         } catch (IOException | ClassNotFoundException e) {
