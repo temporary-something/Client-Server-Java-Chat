@@ -10,6 +10,6 @@ public interface ServerServices {
     void open();
     void close();
     ClientProcessor findClient(long id);
-    Collection<User> addUser(User user, ClientProcessor clientProcessor);
+    void addUser(User user, ClientProcessor clientProcessor, Collection<User> clientUsers);
     void removeUser(long id);
 }

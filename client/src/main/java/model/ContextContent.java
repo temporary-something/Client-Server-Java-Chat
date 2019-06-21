@@ -4,9 +4,15 @@ import java.util.List;
 
 public class ContextContent implements Content {
 
+    private static final long serialVersionUID = 1058388056805703738L;
+
     private List<User> users;
 
-    public ContextContent(List<User> users) {
+    public static ContextContent newInstance(List<User> users) {
+        return new ContextContent(users);
+    }
+
+    private ContextContent(List<User> users) {
         super();
         this.users = users;
     }

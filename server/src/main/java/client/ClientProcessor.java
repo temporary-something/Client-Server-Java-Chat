@@ -9,12 +9,14 @@ import java.io.IOException;
 
 public interface ClientProcessor extends Runnable {
 
+    boolean sendResponse(final Response response) throws IOException;
     void acceptConnection(final Request request) throws IOException;
-    void removeConnection() throws IOException;
+    void removeConnection();
     void sendMessage(final Request request) throws IOException;
     void handleFile(final Request request) throws IOException;
     void sendFile(final Request request) throws IOException;
     void addUser(final User from, final Response response) throws IOException;
     void removeUser(final User from, final Response response) throws IOException;
     void handleError(final ResponseType type) throws IOException;
+    void close();
 }

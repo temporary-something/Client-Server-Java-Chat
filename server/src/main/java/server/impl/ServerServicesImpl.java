@@ -27,7 +27,7 @@ public class ServerServicesImpl implements ServerServices {
                 try {
                     Socket client = server.accept();
                     System.out.println("Client Connection received.");
-                    Thread t1 = new Thread(new ClientProcessorImpl(client));
+                    Thread t1 = new Thread(new ClientProcessorImpl(client, this));
                     t1.start();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -53,18 +53,16 @@ public class ServerServicesImpl implements ServerServices {
     }
 
     @Override
-    public Collection<User> addUser(User user, ClientProcessor clientProcessor) {
-        final Collection<User> usersBefore = new LinkedList<>();
+    public void addUser(User user, ClientProcessor clientProcessor, Collection<User> clientUsers) {
         synchronized (users) {
             for (User u : users.values()) {
-                usersBefore.add(u.clone());
+                clientUsers.add(u.clone());
             }
             synchronized (clients) {
                 users.put(user.getId(), user);
                 clients.put(user.getId(), clientProcessor);
             }
         }
-        return usersBefore;
     }
 
     @Override
