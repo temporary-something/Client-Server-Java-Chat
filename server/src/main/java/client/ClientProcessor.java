@@ -24,7 +24,6 @@ public interface ClientProcessor extends Runnable {
     void handleError(final ResponseType type) throws IOException;
     void close();
 
-    //TODO: A ajouter au diagramme de classes.
-    Map<Long, List<FileContent>> getFilesContent();
-    Map<Long, FileDescriptor> getFilesDescription();
+    Map<Long, List<FileContent>> getFilesContents();
+    Map<Long, FileDescriptor> getFilesDescriptors();
 }

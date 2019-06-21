@@ -29,8 +29,8 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     private Map<Long, File> files;
 
     //Files received/to receive.
-    private Map<Long, List<FileContent>> filesContent = new HashMap<>();
-    private Map<Long, FileDescriptor> filesDescription = new HashMap<>();
+    private Map<Long, List<FileContent>> filesContents = new HashMap<>();
+    private Map<Long, FileDescriptor> filesDescriptors = new HashMap<>();
 
     private Request buildRequest(final RequestType type, Content content, final User destination) {
         return Request.newInstance(type, content, destination);
@@ -213,8 +213,8 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     @Override
     public void prepareReceiveFile(FileDescriptor fileDescriptor, User source) throws IOException {
         //TODO: Test if there's enough memory available before sending the response.
-        filesDescription.put(fileDescriptor.getFileId(), fileDescriptor);
-        filesContent.put(fileDescriptor.getFileId(), new LinkedList<>());
+        filesDescriptors.put(fileDescriptor.getFileId(), fileDescriptor);
+        filesContents.put(fileDescriptor.getFileId(), new LinkedList<>());
         this.sendRequest(buildRequest(
                 RequestType.REQUEST_FILE,
                 FileBasicInformation.newInstance(fileDescriptor.getFileId()),
@@ -223,10 +223,10 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
 
     @Override
     public void receiveFile(FileContent fileContent) {
-        final List<FileContent> list = filesContent.get(fileContent.getFileId());
+        final List<FileContent> list = filesContents.get(fileContent.getFileId());
         list.add(fileContent);
 
-        final FileDescriptor fileDescriptor = filesDescription.get(fileContent.getFileId());
+        final FileDescriptor fileDescriptor = filesDescriptors.get(fileContent.getFileId());
         if (list.size() == fileDescriptor.getChunksTotalNumber()) {
             chatController.receiveFile(fileDescriptor, list);
         }

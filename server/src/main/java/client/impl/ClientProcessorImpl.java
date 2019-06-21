@@ -20,8 +20,8 @@ public class ClientProcessorImpl implements ClientProcessor {
     private ObjectInputStream reader;
 
     private final Collection<User> users = new LinkedList<>();
-    private Map<Long, List<FileContent>> filesContent = new HashMap<>();
-    private Map<Long, FileDescriptor> filesDescription = new HashMap<>();
+    private Map<Long, List<FileContent>> filesContents = new HashMap<>();
+    private Map<Long, FileDescriptor> filesDescriptors = new HashMap<>();
 
     private User user;
 
@@ -212,7 +212,7 @@ public class ClientProcessorImpl implements ClientProcessor {
         final FileDescriptor descriptor = (FileDescriptor)request.getContent();
         if (descriptor.getChunksTotalNumber() < ClientProcessor.FILE_SIZE_THRESHOLD) {
             //File size inferior to the maximum authorized, tell the client to start sending the file.
-            this.filesDescription.put(descriptor.getFileId(), descriptor);
+            this.filesDescriptors.put(descriptor.getFileId(), descriptor);
             sendResponse(buildResponse(
                     ResponseType.CAN_SEND_FILE,
                     FileBasicInformation.newInstance(descriptor.getFileId()),
@@ -226,19 +226,19 @@ public class ClientProcessorImpl implements ClientProcessor {
     @Override
     public void handleFile(Request request) throws IOException {
         final FileContent fileContent = (FileContent)request.getContent();
-        if (fileContent == null || !filesDescription.containsKey(fileContent.getFileId())) {
+        if (fileContent == null || !filesDescriptors.containsKey(fileContent.getFileId())) {
             handleError(ResponseType.WRONG_PARAMETERS);
             return;
         }
 
-        if (!filesContent.containsKey(fileContent.getFileId())) {
-            filesContent.put(fileContent.getFileId(), new LinkedList<>());
+        if (!filesContents.containsKey(fileContent.getFileId())) {
+            filesContents.put(fileContent.getFileId(), new LinkedList<>());
         }
 
-        final List<FileContent> list = filesContent.get(fileContent.getFileId());
+        final List<FileContent> list = filesContents.get(fileContent.getFileId());
         list.add(fileContent);
 
-        final FileDescriptor fileDescriptor = filesDescription.get(fileContent.getFileId());
+        final FileDescriptor fileDescriptor = filesDescriptors.get(fileContent.getFileId());
         if (list.size() == fileDescriptor.getChunksTotalNumber()) {
             //If all the parts are received, send a FileMessage to the destination, and tell
             // the sending user that the file has been sent.
@@ -256,7 +256,7 @@ public class ClientProcessorImpl implements ClientProcessor {
                 ? this
                 : server.findClient(request.getDestination().getId());
 
-        final FileDescriptor fileDescriptor = client.getFilesDescription().get(((FileBasicInformation)request.getContent()).getFileId());
+        final FileDescriptor fileDescriptor = client.getFilesDescriptors().get(((FileBasicInformation)request.getContent()).getFileId());
         if (fileDescriptor == null) {
             handleError(ResponseType.WRONG_PARAMETERS);
             return;
@@ -273,14 +273,14 @@ public class ClientProcessorImpl implements ClientProcessor {
         final FileBasicInformation fileBasicInformation = (FileBasicInformation)request.getContent();
         final ClientProcessor client = server.findClient(request.getDestination().getId());
 
-        final FileDescriptor fileDescriptor = client.getFilesDescription().get(fileBasicInformation.getFileId());
+        final FileDescriptor fileDescriptor = client.getFilesDescriptors().get(fileBasicInformation.getFileId());
 
         if (fileDescriptor == null || request.getDestination() == null) {
             handleError(ResponseType.WRONG_PARAMETERS);
             return;
         }
 
-        final List<FileContent> list = client.getFilesContent().get(fileBasicInformation.getFileId());
+        final List<FileContent> list = client.getFilesContents().get(fileBasicInformation.getFileId());
         if (list.size() != fileDescriptor.getChunksTotalNumber()) {
             handleError(ResponseType.WRONG_PARAMETERS);
             return;
@@ -328,11 +328,13 @@ public class ClientProcessorImpl implements ClientProcessor {
         }
     }
 
-    public Map<Long, List<FileContent>> getFilesContent() {
-        return filesContent;
+    @Override
+    public Map<Long, List<FileContent>> getFilesContents() {
+        return filesContents;
     }
 
-    public Map<Long, FileDescriptor> getFilesDescription() {
-        return filesDescription;
+    @Override
+    public Map<Long, FileDescriptor> getFilesDescriptors() {
+        return filesDescriptors;
     }
 }
