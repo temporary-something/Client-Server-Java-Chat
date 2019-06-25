@@ -9,6 +9,10 @@ import network.InputStreamReader;
 import network.ServerServices;
 import network.impl.InputStreamReaderImpl;
 import network.impl.ServerServicesImpl;
+import util.voice.VoicePlayback;
+import util.voice.VoiceRecorder;
+import util.voice.impl.VoicePlaybackImpl;
+import util.voice.impl.VoiceRecorderImpl;
 import view.ChatView;
 import view.LoginView;
 import view.impl.ChatViewImpl;
@@ -24,5 +28,8 @@ public class GuiceModule extends AbstractModule {
         bind(ChatFunctionalities.class).to(ChatController.class).asEagerSingleton();
         bind(InputStreamReader.class).to(InputStreamReaderImpl.class).asEagerSingleton();
         bind(ServerServices.class).to(ServerServicesImpl.class).asEagerSingleton();
+
+        bind(VoiceRecorder.class).to(VoiceRecorderImpl.class);
+        bind(VoicePlayback.class).to(VoicePlaybackImpl.class);
     }
 }

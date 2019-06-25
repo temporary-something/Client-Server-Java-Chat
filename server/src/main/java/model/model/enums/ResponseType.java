@@ -1,4 +1,4 @@
-package model.enums;
+package model.model.enums;
 
 import java.io.Serializable;
 

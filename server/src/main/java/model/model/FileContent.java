@@ -1,6 +1,6 @@
-package model;
+package model.model;
 
-public class FileContent extends ChunkContent implements Comparable<FileContent> {
+public class FileContent extends ChunkContent implements Comparable<model.FileContent> {
 
     private static final long serialVersionUID = 902393113162323186L;
 
@@ -8,8 +8,8 @@ public class FileContent extends ChunkContent implements Comparable<FileContent>
 
     private long fileId;
 
-    public static FileContent newInstance(long fileId, long chunkNumber, byte[] data) {
-        return new FileContent(fileId, chunkNumber, data);
+    public static model.FileContent newInstance(long fileId, long chunkNumber, byte[] data) {
+        return new model.FileContent(fileId, chunkNumber, data);
     }
 
     private FileContent(long fileId, long chunkNumber, byte[] data) {
@@ -28,7 +28,7 @@ public class FileContent extends ChunkContent implements Comparable<FileContent>
 
 
     @Override
-    public int compareTo(FileContent o) {
+    public int compareTo(model.FileContent o) {
         int sameFile = Long.compare(fileId, o.fileId);
         if (sameFile != 0) return sameFile;
         return Long.compare(getChunkNumber(), o.getChunkNumber());
