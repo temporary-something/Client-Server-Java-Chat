@@ -17,7 +17,6 @@ public interface ChatFunctionalities {
     void initializeContext(ContextContent context);
     void requestFile(User source, long fileId, String absolutePath);
     void receiveFile(FileDescriptor fileDescriptor, List<FileContent> list);
-    //TODO: Add to the class Diagram.
     void startRecording();
     void stopRecording(User destination);
     void sendAudio(User destination, byte[] audio);

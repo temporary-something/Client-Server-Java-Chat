@@ -21,8 +21,8 @@ public class ClientProcessorImpl implements ClientProcessor {
 
     private final Collection<User> users = new LinkedList<>();
     //Files
-    private final Map<Long, List<FileContent>> filesContents = new HashMap<>();
-    private final Map<Long, FileDescriptor> filesDescriptors = new HashMap<>();
+    private final Map<Long, List<FileContent>> fileContents = new HashMap<>();
+    private final Map<Long, FileDescriptor> fileDescriptors = new HashMap<>();
     //Audios
     private final Map<Long, List<AudioContent>> audioContents = new HashMap<>();
     private final Map<Long, AudioDescriptor> audioDescriptors = new HashMap<>();
@@ -232,8 +232,8 @@ public class ClientProcessorImpl implements ClientProcessor {
         final FileDescriptor descriptor = (FileDescriptor)request.getContent();
         if (descriptor.getChunksTotalNumber() < ClientProcessor.FILE_SIZE_THRESHOLD) {
             //File size inferior to the maximum authorized, tell the client to start sending the file.
-            synchronized (this.filesDescriptors) {
-                this.filesDescriptors.put(descriptor.getFileId(), descriptor);
+            synchronized (this.fileDescriptors) {
+                this.fileDescriptors.put(descriptor.getFileId(), descriptor);
             }
             sendResponse(buildResponse(
                     ResponseType.CAN_SEND_FILE,
@@ -249,8 +249,8 @@ public class ClientProcessorImpl implements ClientProcessor {
     public void handleFile(Request request) throws IOException {
         final FileContent fileContent = (FileContent)request.getContent();
         boolean error = fileContent == null;
-        synchronized (filesDescriptors) {
-            error = error || !filesDescriptors.containsKey(fileContent.getFileId());
+        synchronized (fileDescriptors) {
+            error = error || !fileDescriptors.containsKey(fileContent.getFileId());
         }
         if (error) {
             handleError(ResponseType.WRONG_PARAMETERS);
@@ -258,11 +258,11 @@ public class ClientProcessorImpl implements ClientProcessor {
         }
 
         List<FileContent> list;
-        synchronized (filesContents) {
-            if (!filesContents.containsKey(fileContent.getFileId())) {
-                filesContents.put(fileContent.getFileId(), new LinkedList<>());
+        synchronized (fileContents) {
+            if (!fileContents.containsKey(fileContent.getFileId())) {
+                fileContents.put(fileContent.getFileId(), new LinkedList<>());
             }
-            list = filesContents.get(fileContent.getFileId());
+            list = fileContents.get(fileContent.getFileId());
         }
 
         list.add(fileContent);
@@ -456,15 +456,15 @@ public class ClientProcessorImpl implements ClientProcessor {
 
     @Override
     public List<FileContent> getFileContents(long fileId) {
-        synchronized (filesContents) {
-            return filesContents.get(fileId);
+        synchronized (fileContents) {
+            return fileContents.get(fileId);
         }
     }
 
     @Override
     public FileDescriptor getFileDescriptor(long fileId) {
-        synchronized (filesDescriptors) {
-            return filesDescriptors.get(fileId);
+        synchronized (fileDescriptors) {
+            return fileDescriptors.get(fileId);
         }
     }
 

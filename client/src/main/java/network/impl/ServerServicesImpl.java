@@ -29,8 +29,8 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     private Map<Long, File> files;
 
     //Files received/to receive.
-    private Map<Long, List<FileContent>> filesContents = new HashMap<>();
-    private Map<Long, FileDescriptor> filesDescriptors = new HashMap<>();
+    private Map<Long, List<FileContent>> fileContents = new HashMap<>();
+    private Map<Long, FileDescriptor> fileDescriptors = new HashMap<>();
 
     //Audios sent/to send.
     private Map<Long, byte[]> audios;
@@ -254,8 +254,8 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     @Override
     public void prepareReceiveFile(FileDescriptor fileDescriptor, User source) throws IOException {
         //TODO: Test if there's enough memory available before sending the response.
-        filesDescriptors.put(fileDescriptor.getFileId(), fileDescriptor);
-        filesContents.put(fileDescriptor.getFileId(), new LinkedList<>());
+        fileDescriptors.put(fileDescriptor.getFileId(), fileDescriptor);
+        fileContents.put(fileDescriptor.getFileId(), new LinkedList<>());
         this.sendRequest(buildRequest(
                 RequestType.REQUEST_FILE,
                 FileBasicInformation.newInstance(fileDescriptor.getFileId()),
@@ -264,10 +264,10 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
 
     @Override
     public void receiveFile(FileContent fileContent) {
-        final List<FileContent> list = filesContents.get(fileContent.getFileId());
+        final List<FileContent> list = fileContents.get(fileContent.getFileId());
         list.add(fileContent);
 
-        final FileDescriptor fileDescriptor = filesDescriptors.get(fileContent.getFileId());
+        final FileDescriptor fileDescriptor = fileDescriptors.get(fileContent.getFileId());
         if (list.size() == fileDescriptor.getChunksTotalNumber()) {
             chatController.receiveFile(fileDescriptor, list);
         }
