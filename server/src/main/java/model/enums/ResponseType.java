@@ -11,7 +11,7 @@ public enum ResponseType implements Serializable {
     MESSAGE_SENT,
     //Prepare the user to receive a file.
     PREPARE_RECEIVE_FILE,
-    //File chunk received (chunks of bytes representing a file).
+    //File chunk (chunks of bytes representing a file).
     FILE_CHUNK,
     //File message received (name of a file).
     FILE_MESSAGE,
@@ -23,6 +23,18 @@ public enum ResponseType implements Serializable {
     ADD_USER,
     //A user just disconnected.
     REMOVE_USER,
+
+    //Prepare the user to receive a file.
+    PREPARE_RECEIVE_AUDIO,
+    //File chunk (chunks of bytes representing a file).
+    AUDIO_CHUNK,
+    //File message received (name of a file).
+    AUDIO_MESSAGE,
+    //Can send the file.
+    CAN_SEND_AUDIO,
+    //File successfully sent.
+    AUDIO_SENT,
+
     //Errors.
     WRONG_PARAMETERS, DESTINATION_NOT_FOUND, INTERNAL_SERVER_ERROR, INSUFFICIENT_MEMORY
 }

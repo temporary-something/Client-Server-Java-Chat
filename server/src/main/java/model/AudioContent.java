@@ -1,4 +1,4 @@
-package model.model;
+package model;
 
 public class AudioContent extends ChunkContent implements Comparable<AudioContent> {
 

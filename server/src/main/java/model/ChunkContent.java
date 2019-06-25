@@ -1,6 +1,4 @@
-package model.model;
-
-import model.Content;
+package model;
 
 public abstract class ChunkContent implements Content {
 

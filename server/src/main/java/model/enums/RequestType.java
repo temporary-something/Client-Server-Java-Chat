@@ -16,5 +16,13 @@ public enum RequestType implements Serializable {
     //To request information about a file.
     PREPARE_REQUEST_FILE,
     //To request a file.
-    REQUEST_FILE
+    REQUEST_FILE,
+    //Prepare the server to send an audio file.
+    PREPARE_SEND_AUDIO,
+    //To send an audio file.
+    SEND_AUDIO,
+    //To request information about an audio file.
+    PREPARE_REQUEST_AUDIO,
+    //To request an audio file.
+    REQUEST_AUDIO
 }
