@@ -8,15 +8,13 @@ import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import model.ContextContent;
-import model.FileMessageContent;
-import model.MessageContainer;
-import model.User;
+import model.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import view.ChatView;
@@ -36,6 +34,8 @@ public class ChatViewImpl implements ChatView {
     @FXML private ListView<User> listUsers;
     @FXML private ListView<MessageContainer> listMessages;
     @FXML private TextArea txtMessage;
+    @FXML private Button btnRecordAudio;
+    @FXML private Button btnStopRecordAudio;
 
     @Inject private ChatFunctionalities chatController;
 
@@ -65,6 +65,11 @@ public class ChatViewImpl implements ChatView {
                 requestFile(
                         newValue.getUser(),
                         ((FileMessageContent)newValue.getMessageContent()).getFileId());
+            } else if (newValue.getMessageContent() instanceof AudioMessageContent) {
+                //Send Request to the server to start listening to the audio.
+                requestAudio(
+                        newValue.getUser(),
+                        ((AudioMessageContent)newValue.getMessageContent()).getAudioId());
             }
         });
 
@@ -249,12 +254,50 @@ public class ChatViewImpl implements ChatView {
     }
 
     @Override
-    public void requestFile(User user, long fileId) {
+    public void requestFile(User source, long fileId) {
         final File file = fileChooser.showSaveDialog(null);
         if (file != null) {
-            Thread t = new Thread(() -> chatController.requestFile(user, fileId, file.getAbsolutePath()));
+            Thread t = new Thread(() -> chatController.requestFile(source, fileId, file.getAbsolutePath()));
             t.start();
         }
+    }
+
+    @Override
+    public void startRecording(ActionEvent event) {
+        btnRecordAudio.setDisable(true);
+        btnStopRecordAudio.setDisable(false);
+        chatController.startRecording();
+    }
+
+    @Override
+    public void stopRecording(ActionEvent event) {
+        btnRecordAudio.setDisable(false);
+        btnStopRecordAudio.setDisable(true);
+        chatController.stopRecording(this.selectedUser);
+    }
+
+    @Override
+    public void audioSent(MessageContainer audioMessage) {
+        final Task<MessageContainer> task = new Task<MessageContainer>() {
+            @Override
+            protected MessageContainer call() {
+                return audioMessage;
+            }
+        };
+        task.setOnSucceeded(event1 -> {
+            final MessageContainer container = task.getValue();
+            container.setUser(null);
+            listMessages.getItems().add(container);
+        });
+        task.setOnFailed(event12 -> logger.info("Adding FileMessage Failed ..."));
+
+        this.startTask(task);
+    }
+
+    @Override
+    public void requestAudio(User source, long audioId) {
+        Thread t = new Thread(() -> chatController.requestAudio(source, audioId));
+        t.start();
     }
 
     private void startTask(final Task task) {

@@ -32,6 +32,13 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     private Map<Long, List<FileContent>> filesContents = new HashMap<>();
     private Map<Long, FileDescriptor> filesDescriptors = new HashMap<>();
 
+    //Audios sent/to send.
+    private Map<Long, byte[]> audios;
+
+    //Audios received/to receive.
+    private Map<Long, List<AudioContent>> audioContents = new HashMap<>();
+    private Map<Long, AudioDescriptor> audioDescriptors = new HashMap<>();
+
     private Request buildRequest(final RequestType type, Content content, final User destination) {
         return Request.newInstance(type, content, destination);
     }
@@ -87,6 +94,25 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
                 receiveFile((FileContent) response.getContent());
                 break;
             }
+            case PREPARE_RECEIVE_AUDIO: {
+                try {
+                    prepareReceiveAudio((AudioDescriptor) response.getContent(), response.getSource());
+                } catch (IOException e) {
+                    logger.error(e);
+                }
+                break;
+            }
+            case AUDIO_MESSAGE: {
+                chatController.receiveMessage(
+                        MessageContainer.newInstance(
+                                response.getSource(),
+                                (AudioMessageContent)response.getContent()));
+                break;
+            }
+            case AUDIO_CHUNK: {
+                receiveAudio((AudioContent) response.getContent());
+                break;
+            }
             case MESSAGE_SENT: {
                 logger.info("Message Sent.");
                 break;
@@ -104,6 +130,21 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
                         MessageContainer.newInstance(
                             response.getSource(),
                             (FileMessageContent)response.getContent()));
+                break;
+            }
+            case CAN_SEND_AUDIO: {
+                try {
+                    sendAudio(response.getSource(), ((AudioBasicInformation)response.getContent()).getAudioId());
+                } catch (IOException e) {
+                    logger.error(e);
+                }
+                break;
+            }
+            case AUDIO_SENT: {
+                chatController.audioSent(
+                        MessageContainer.newInstance(
+                                response.getSource(),
+                                (AudioMessageContent)response.getContent()));
                 break;
             }
             case INSUFFICIENT_MEMORY: {
@@ -229,6 +270,73 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
         final FileDescriptor fileDescriptor = filesDescriptors.get(fileContent.getFileId());
         if (list.size() == fileDescriptor.getChunksTotalNumber()) {
             chatController.receiveFile(fileDescriptor, list);
+        }
+    }
+
+    @Override
+    public void checkSendAudio(User destination, byte[] audio) throws IOException {
+        final AudioDescriptor audioDescriptor = AudioDescriptor.newInstance(
+                audio.length/AudioContent.MAX_BYTE_SIZE + 1);
+        this.sendRequest(this.buildRequest(RequestType.PREPARE_SEND_AUDIO, audioDescriptor, destination));
+
+        if (this.audios == null) this.audios = new HashMap<>();
+        audios.put(audioDescriptor.getAudioId(), audio);
+    }
+
+    @Override
+    public void sendAudio(User destination, long audioId) throws IOException {
+        final byte[] audio = audios.get(audioId);
+
+        if (audio == null) {
+            logger.error("Unknown audioId received.");
+            return;
+        }
+
+        final long totalChunksNumber = audio.length/AudioContent.MAX_BYTE_SIZE + 1;
+        //Used during the last iteration to not create an array bigger than what is
+        //needed to store what is left of the audio.
+        long minus = 0;
+
+        for (int i = 0; i < totalChunksNumber && !connection.isClosed(); i++) {
+            long length = (i+1)*AudioContent.MAX_BYTE_SIZE;
+            if (length > audio.length) minus = length - audio.length;
+
+            byte[] bytes = Arrays.copyOfRange(audio,
+                    Math.toIntExact(i*AudioContent.MAX_BYTE_SIZE),
+                    Math.toIntExact(length - minus));
+
+            final AudioContent audioContent = AudioContent.newInstance(audioId, i, bytes);
+            this.sendRequest(this.buildRequest(RequestType.SEND_AUDIO, audioContent, destination));
+        }
+    }
+
+    @Override
+    public void requestAudio(User source, long audioId) throws IOException {
+        this.sendRequest(this.buildRequest(
+                RequestType.PREPARE_REQUEST_AUDIO,
+                AudioBasicInformation.newInstance(audioId),
+                source));
+    }
+
+    @Override
+    public void prepareReceiveAudio(AudioDescriptor audioDescriptor, User source) throws IOException {
+        //TODO: Test if there's enough memory available before sending the response.
+        audioDescriptors.put(audioDescriptor.getAudioId(), audioDescriptor);
+        audioContents.put(audioDescriptor.getAudioId(), new LinkedList<>());
+        this.sendRequest(buildRequest(
+                RequestType.REQUEST_AUDIO,
+                AudioBasicInformation.newInstance(audioDescriptor.getAudioId()),
+                source));
+    }
+
+    @Override
+    public void receiveAudio(AudioContent audioContent) {
+        final List<AudioContent> list = audioContents.get(audioContent.getAudioId());
+        list.add(audioContent);
+
+        final AudioDescriptor audioDescriptor = audioDescriptors.get(audioContent.getAudioId());
+        if (list.size() == audioDescriptor.getChunksTotalNumber()) {
+            chatController.receiveAudio(audioDescriptor, list);
         }
     }
 }

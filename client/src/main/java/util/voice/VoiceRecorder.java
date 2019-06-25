@@ -4,6 +4,6 @@ import model.User;
 
 public interface VoiceRecorder {
 
-    void captureAudio(User destination);
-    void endRecording();
+    void captureAudio();
+    void endRecording(User destination);
 }

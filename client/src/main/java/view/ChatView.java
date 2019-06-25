@@ -8,13 +8,21 @@ import model.User;
 
 public interface ChatView extends Initializable {
 
-    void sendMessage(ActionEvent event);
-    void uploadFile(ActionEvent event);
     void disconnect(ActionEvent event);
-    void receiveMessage(MessageContainer message);
     void initializeContext(ContextContent context);
+
+    void sendMessage(ActionEvent event);
+    void receiveMessage(MessageContainer message);
+
     void addUser(User user);
     void removeUser(User user);
+
+    void uploadFile(ActionEvent event);
     void fileSent(MessageContainer fileMessage);
-    void requestFile(User user, long fileId);
+    void requestFile(User source, long fileId);
+
+    void startRecording(ActionEvent event);
+    void stopRecording(ActionEvent event);
+    void audioSent(MessageContainer audioMessage);
+    void requestAudio(User source, long audioId);
 }

@@ -16,7 +16,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="60.0" prefWidth="190.0">
                <children>
-                  <Label text="Connectés : " />
+                  <Label text="Connected : " />
                   <Label fx:id="lblConnected" text="0" />
                </children>
             </HBox>
@@ -29,22 +29,24 @@
          <children>
             <ScrollPane hbarPolicy="NEVER" prefHeight="448.0" prefWidth="630.0">
                <content>
-                  <ListView fx:id="listMessages" prefHeight="446.0" prefWidth="613.0" />
+                  <ListView fx:id="listMessages" prefHeight="443.0" prefWidth="615.0" />
                </content></ScrollPane>
             <HBox prefHeight="152.0" prefWidth="200.0">
                <children>
                   <TextArea fx:id="txtMessage" prefHeight="152.0" prefWidth="478.0" promptText="Message ..." wrapText="true" />
                   <VBox alignment="CENTER" prefHeight="152.0" prefWidth="159.0">
                      <children>
-                        <Button fx:id="btnUpload" mnemonicParsing="false" onAction="#uploadFile" text="Joindre">
+                        <Button fx:id="btnStopRecordAudio" disable="true" mnemonicParsing="false" onAction="#stopRecording" prefHeight="30.0" prefWidth="70.0" text="Stop" />
+                        <Button fx:id="btnRecordAudio" mnemonicParsing="false" onAction="#startRecording" prefHeight="30.0" prefWidth="70.0" text="Record" />
+                        <Button fx:id="btnUpload" mnemonicParsing="false" onAction="#uploadFile" prefHeight="30.0" prefWidth="70.0" text="Attach">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnSend" mnemonicParsing="false" onAction="#sendMessage" text="Envoyer">
+                        <Button fx:id="btnSend" mnemonicParsing="false" onAction="#sendMessage" prefHeight="30.0" prefWidth="70.0" text="Send">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnDisconnect" mnemonicParsing="false" onAction="#disconnect" text="Quitter" />
+                        <Button fx:id="btnDisconnect" mnemonicParsing="false" onAction="#disconnect" prefHeight="30.0" prefWidth="70.0" text="Exit" />
                      </children>
                   </VBox>
                </children>

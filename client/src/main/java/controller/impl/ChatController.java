@@ -6,15 +6,14 @@ import model.*;
 import network.ServerServices;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import util.voice.VoicePlayback;
+import util.voice.VoiceRecorder;
 import view.ChatView;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ChatController implements ChatFunctionalities {
 
@@ -22,6 +21,8 @@ public class ChatController implements ChatFunctionalities {
 
     @Inject private ChatView chatView;
     @Inject private ServerServices serverServices;
+    @Inject private VoiceRecorder voiceRecorder;
+    @Inject private VoicePlayback voicePlayback;
 
     private Map<Long, String> toSaveFilePaths = new HashMap<>();
 
@@ -32,7 +33,7 @@ public class ChatController implements ChatFunctionalities {
             serverServices.sendMessage(messageContainer);
             return messageContainer;
         } catch (IOException e) {
-            logger.error(e);
+            logger.error(e.getMessage());
             return null;
         }
     }
@@ -42,7 +43,7 @@ public class ChatController implements ChatFunctionalities {
         try {
             serverServices.checkSendFile(destination, file);
         } catch (IOException e) {
-            logger.error(e);
+            logger.error(e.getMessage());
         }
     }
 
@@ -82,7 +83,7 @@ public class ChatController implements ChatFunctionalities {
             toSaveFilePaths.put(fileId, absolutePath);
             serverServices.requestFile(source, fileId);
         } catch (IOException e) {
-            logger.error(e);
+            logger.error(e.getMessage());
         }
     }
 
@@ -100,5 +101,57 @@ public class ChatController implements ChatFunctionalities {
         } catch (IOException e) {
             logger.error(e);
         }
+    }
+
+    @Override
+    public void startRecording() {
+        voiceRecorder.captureAudio();
+    }
+
+    @Override
+    public void stopRecording(User destination) {
+        voiceRecorder.endRecording(destination);
+    }
+
+    @Override
+    public void sendAudio(User destination, byte[] audio) {
+        try {
+            serverServices.checkSendAudio(destination, audio);
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
+    }
+
+    @Override
+    public void audioSent(MessageContainer message) {
+        chatView.audioSent(message);
+    }
+
+    @Override
+    public void requestAudio(User source, long audioId) {
+        try {
+            serverServices.requestAudio(source, audioId);
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
+    }
+
+    @Override
+    public void receiveAudio(AudioDescriptor descriptor, List<AudioContent> list) {
+        logger.info("Audio Received : " + descriptor);
+        Collections.sort(list);
+        final byte[] audio = new byte[AudioContent.MAX_BYTE_SIZE*(list.size()-1)
+                + list.get(list.size()-1).getData().length];
+        byte[] temps;
+        for (int i = 0; i < list.size(); i++) {
+            temps = list.get(i).getData();
+            System.arraycopy(temps, 0, audio, i * AudioContent.MAX_BYTE_SIZE, temps.length);
+        }
+        this.playAudio(audio);
+    }
+
+    @Override
+    public void playAudio(byte[] audio) {
+        voicePlayback.playAudio(audio);
     }
 }

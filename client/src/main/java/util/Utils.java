@@ -15,8 +15,8 @@ public class Utils {
      * Defines an audio format.
      */
     public static AudioFormat getAudioFormat() {
-        float sampleRate = 32000;
-        int sampleSizeInBits = 16;
+        float sampleRate = 16000;
+        int sampleSizeInBits = 8;
         int channels = 2;
         boolean signed = true;
         boolean bigEndian = true;

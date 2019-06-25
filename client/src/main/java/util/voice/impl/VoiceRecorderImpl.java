@@ -1,6 +1,7 @@
 package util.voice.impl;
 
 import com.google.inject.Inject;
+import controller.ChatFunctionalities;
 import model.User;
 import network.ServerServices;
 import org.apache.logging.log4j.LogManager;
@@ -26,15 +27,16 @@ public class VoiceRecorderImpl implements VoiceRecorder {
     private static final Logger logger = LogManager.getLogger(VoiceRecorderImpl.class);
 
     @Inject
-    private ServerServices services;
+    private ChatFunctionalities controller;
 
     private boolean isRecording = false;
+    private User destination;
 
     /**
      * Captures the audio in a new Thread and sends it to the given destination via the server.
      */
     @Override
-    public void captureAudio(User destination) {
+    public void captureAudio() {
         try {
             final AudioFormat format = Utils.getAudioFormat();
             DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
@@ -61,8 +63,7 @@ public class VoiceRecorderImpl implements VoiceRecorder {
                             out.flush();
                             line.close();
                             line.flush();
-                            //TODO: replace with a call to server#sendVoiceMessage
-                            Files.write(Paths.get("C:\\Downloads\\huhu.wav"), out.toByteArray());
+                            controller.sendAudio(destination, out.toByteArray());
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -80,7 +81,8 @@ public class VoiceRecorderImpl implements VoiceRecorder {
     }
 
     @Override
-    public void endRecording() {
+    public void endRecording(User destination) {
         isRecording = false;
+        this.destination = destination;
     }
 }

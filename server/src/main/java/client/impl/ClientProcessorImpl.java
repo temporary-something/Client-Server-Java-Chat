@@ -20,8 +20,12 @@ public class ClientProcessorImpl implements ClientProcessor {
     private ObjectInputStream reader;
 
     private final Collection<User> users = new LinkedList<>();
-    private Map<Long, List<FileContent>> filesContents = new HashMap<>();
-    private Map<Long, FileDescriptor> filesDescriptors = new HashMap<>();
+    //Files
+    private final Map<Long, List<FileContent>> filesContents = new HashMap<>();
+    private final Map<Long, FileDescriptor> filesDescriptors = new HashMap<>();
+    //Audios
+    private final Map<Long, List<AudioContent>> audioContents = new HashMap<>();
+    private final Map<Long, AudioDescriptor> audioDescriptors = new HashMap<>();
 
     private User user;
 
@@ -96,6 +100,22 @@ public class ClientProcessorImpl implements ClientProcessor {
                     }
                     case REQUEST_FILE: {
                         sendFile(request);
+                        break;
+                    }
+                    case PREPARE_SEND_AUDIO: {
+                        checkAudio(request);
+                        break;
+                    }
+                    case SEND_AUDIO: {
+                        handleAudio(request);
+                        break;
+                    }
+                    case PREPARE_REQUEST_AUDIO: {
+                        prepareSendAudio(request);
+                        break;
+                    }
+                    case REQUEST_AUDIO: {
+                        sendAudio(request);
                         break;
                     }
                     case DISCONNECT: {
@@ -212,7 +232,9 @@ public class ClientProcessorImpl implements ClientProcessor {
         final FileDescriptor descriptor = (FileDescriptor)request.getContent();
         if (descriptor.getChunksTotalNumber() < ClientProcessor.FILE_SIZE_THRESHOLD) {
             //File size inferior to the maximum authorized, tell the client to start sending the file.
-            this.filesDescriptors.put(descriptor.getFileId(), descriptor);
+            synchronized (this.filesDescriptors) {
+                this.filesDescriptors.put(descriptor.getFileId(), descriptor);
+            }
             sendResponse(buildResponse(
                     ResponseType.CAN_SEND_FILE,
                     FileBasicInformation.newInstance(descriptor.getFileId()),
@@ -226,19 +248,26 @@ public class ClientProcessorImpl implements ClientProcessor {
     @Override
     public void handleFile(Request request) throws IOException {
         final FileContent fileContent = (FileContent)request.getContent();
-        if (fileContent == null || !filesDescriptors.containsKey(fileContent.getFileId())) {
+        boolean error = fileContent == null;
+        synchronized (filesDescriptors) {
+            error = error || !filesDescriptors.containsKey(fileContent.getFileId());
+        }
+        if (error) {
             handleError(ResponseType.WRONG_PARAMETERS);
             return;
         }
 
-        if (!filesContents.containsKey(fileContent.getFileId())) {
-            filesContents.put(fileContent.getFileId(), new LinkedList<>());
+        List<FileContent> list;
+        synchronized (filesContents) {
+            if (!filesContents.containsKey(fileContent.getFileId())) {
+                filesContents.put(fileContent.getFileId(), new LinkedList<>());
+            }
+            list = filesContents.get(fileContent.getFileId());
         }
 
-        final List<FileContent> list = filesContents.get(fileContent.getFileId());
         list.add(fileContent);
 
-        final FileDescriptor fileDescriptor = filesDescriptors.get(fileContent.getFileId());
+        final FileDescriptor fileDescriptor = this.getFileDescriptor(fileContent.getFileId());
         if (list.size() == fileDescriptor.getChunksTotalNumber()) {
             //If all the parts are received, send a FileMessage to the destination, and tell
             // the sending user that the file has been sent.
@@ -256,7 +285,7 @@ public class ClientProcessorImpl implements ClientProcessor {
                 ? this
                 : server.findClient(request.getDestination().getId());
 
-        final FileDescriptor fileDescriptor = client.getFilesDescriptors().get(((FileBasicInformation)request.getContent()).getFileId());
+        final FileDescriptor fileDescriptor = client.getFileDescriptor(((FileBasicInformation)request.getContent()).getFileId());
         if (fileDescriptor == null) {
             handleError(ResponseType.WRONG_PARAMETERS);
             return;
@@ -273,14 +302,14 @@ public class ClientProcessorImpl implements ClientProcessor {
         final FileBasicInformation fileBasicInformation = (FileBasicInformation)request.getContent();
         final ClientProcessor client = server.findClient(request.getDestination().getId());
 
-        final FileDescriptor fileDescriptor = client.getFilesDescriptors().get(fileBasicInformation.getFileId());
+        final FileDescriptor fileDescriptor = client.getFileDescriptor(fileBasicInformation.getFileId());
 
         if (fileDescriptor == null || request.getDestination() == null) {
             handleError(ResponseType.WRONG_PARAMETERS);
             return;
         }
 
-        final List<FileContent> list = client.getFilesContents().get(fileBasicInformation.getFileId());
+        final List<FileContent> list = client.getFileContents(fileBasicInformation.getFileId());
         if (list.size() != fileDescriptor.getChunksTotalNumber()) {
             handleError(ResponseType.WRONG_PARAMETERS);
             return;
@@ -288,6 +317,103 @@ public class ClientProcessorImpl implements ClientProcessor {
 
         for (FileContent fc : list) {
             sendResponse(buildResponse(ResponseType.FILE_CHUNK, fc));
+        }
+    }
+
+    @Override
+    public void checkAudio(Request request) throws IOException {
+        final AudioDescriptor descriptor = (AudioDescriptor) request.getContent();
+        if (descriptor.getChunksTotalNumber() < ClientProcessor.AUDIO_SIZE_THRESHOLD) {
+            //Audio file size inferior to the maximum authorized, tell the client to start sending the file.
+            synchronized ( this.audioDescriptors) {
+                this.audioDescriptors.put(descriptor.getAudioId(), descriptor);
+            }
+            sendResponse(buildResponse(
+                    ResponseType.CAN_SEND_AUDIO,
+                    AudioBasicInformation.newInstance(descriptor.getAudioId()),
+                    request.getDestination()));
+        } else {
+            //File is too big, tell the client to not send the file.
+            sendResponse(buildResponse(ResponseType.INSUFFICIENT_MEMORY, null));
+        }
+    }
+
+    @Override
+    public void handleAudio(Request request) throws IOException {
+        final AudioContent audioContent = (AudioContent) request.getContent();
+
+        boolean error = audioContent == null;
+        synchronized (audioDescriptors) {
+            error = error || !audioDescriptors.containsKey(audioContent.getAudioId());
+        }
+        if (error) {
+            handleError(ResponseType.WRONG_PARAMETERS);
+            return;
+        }
+
+
+        List<AudioContent> list;
+        synchronized (audioContents) {
+            if (!audioContents.containsKey(audioContent.getAudioId())) {
+                audioContents.put(audioContent.getAudioId(), new LinkedList<>());
+            }
+            list = audioContents.get(audioContent.getAudioId());
+        }
+
+
+        list.add(audioContent);
+
+        final AudioDescriptor audioDescriptor = this.getAudioDescriptor(audioContent.getAudioId());
+        if (list.size() == audioDescriptor.getChunksTotalNumber()) {
+            //If all the parts are received, send an Audio Message to the destination, and tell
+            // the sending user that the file has been sent.
+            sendMessage(
+                    AudioMessageContent.newInstance(audioDescriptor),
+                    request.getDestination(),
+                    ResponseType.AUDIO_MESSAGE,
+                    ResponseType.AUDIO_SENT);
+        }
+    }
+
+    @Override
+    public void prepareSendAudio(Request request) throws IOException {
+        final ClientProcessor client = (request.getDestination() == null)
+                ? this
+                : server.findClient(request.getDestination().getId());
+
+        final AudioDescriptor audioDescriptor = client.getAudioDescriptor(
+                ((AudioBasicInformation)request.getContent()).getAudioId());
+        if (audioDescriptor == null) {
+            handleError(ResponseType.WRONG_PARAMETERS);
+            return;
+        }
+
+        sendResponse(buildResponse(
+                ResponseType.PREPARE_RECEIVE_AUDIO,
+                audioDescriptor,
+                (request.getDestination() == null) ? user : request.getDestination()));
+    }
+
+    @Override
+    public void sendAudio(Request request) throws IOException {
+        final AudioBasicInformation audioBasicInformation = (AudioBasicInformation) request.getContent();
+        final ClientProcessor client = server.findClient(request.getDestination().getId());
+
+        final AudioDescriptor audioDescriptor = client.getAudioDescriptor(audioBasicInformation.getAudioId());
+
+        if (audioDescriptor == null || request.getDestination() == null) {
+            handleError(ResponseType.WRONG_PARAMETERS);
+            return;
+        }
+
+        final List<AudioContent> list = client.getAudioContents(audioBasicInformation.getAudioId());
+        if (list.size() != audioDescriptor.getChunksTotalNumber()) {
+            handleError(ResponseType.WRONG_PARAMETERS);
+            return;
+        }
+
+        for (AudioContent fc : list) {
+            sendResponse(buildResponse(ResponseType.AUDIO_CHUNK, fc));
         }
     }
 
@@ -329,12 +455,30 @@ public class ClientProcessorImpl implements ClientProcessor {
     }
 
     @Override
-    public Map<Long, List<FileContent>> getFilesContents() {
-        return filesContents;
+    public List<FileContent> getFileContents(long fileId) {
+        synchronized (filesContents) {
+            return filesContents.get(fileId);
+        }
     }
 
     @Override
-    public Map<Long, FileDescriptor> getFilesDescriptors() {
-        return filesDescriptors;
+    public FileDescriptor getFileDescriptor(long fileId) {
+        synchronized (filesDescriptors) {
+            return filesDescriptors.get(fileId);
+        }
+    }
+
+    @Override
+    public List<AudioContent> getAudioContents(long audioId) {
+        synchronized (audioContents) {
+            return audioContents.get(audioId);
+        }
+    }
+
+    @Override
+    public AudioDescriptor getAudioDescriptor(long audioId) {
+        synchronized (audioDescriptors) {
+            return audioDescriptors.get(audioId);
+        }
     }
 }

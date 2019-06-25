@@ -14,7 +14,6 @@ public class AudioContent extends ChunkContent implements Comparable<AudioConten
     private AudioContent(long audioId, long chunkNumber, byte[] data) {
         super(chunkNumber, data);
         this.audioId = audioId;
-
     }
 
     public long getAudioId() {
