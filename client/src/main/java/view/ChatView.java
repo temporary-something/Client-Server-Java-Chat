@@ -25,4 +25,6 @@ public interface ChatView extends Initializable {
     void stopRecording(ActionEvent event);
     void audioSent(MessageContainer audioMessage);
     void requestAudio(User source, long audioId);
+
+    void requestControl(ActionEvent event);
 }

@@ -1,28 +1,41 @@
 package controller.impl;
 
 import com.google.inject.Inject;
+import com.google.inject.Injector;
 import controller.ChatFunctionalities;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import model.*;
+import model.Frame;
 import network.ServerServices;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import util.Utils;
+import util.image.ScreenLiveStream;
 import util.voice.VoicePlayback;
 import util.voice.VoiceRecorder;
 import view.ChatView;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
+import java.util.List;
 
 public class ChatController implements ChatFunctionalities {
 
     private static final Logger logger = LogManager.getLogger(ChatController.class);
 
+    @Inject private Injector injector;
     @Inject private ChatView chatView;
     @Inject private ServerServices serverServices;
     @Inject private VoiceRecorder voiceRecorder;
     @Inject private VoicePlayback voicePlayback;
+    @Inject private ScreenLiveStream screenLiveStream;
 
     private Map<Long, String> toSaveFilePaths = new HashMap<>();
 
@@ -153,5 +166,60 @@ public class ChatController implements ChatFunctionalities {
     @Override
     public void playAudio(byte[] audio) {
         voicePlayback.playAudio(audio);
+    }
+
+    @Override
+    public void requestControl(User destination) {
+        logger.info("Requesting control from user : " + destination);
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/Screen.fxml"));
+            fxmlLoader.setControllerFactory(injector::getInstance);
+            Parent root = (Pane)fxmlLoader.load();
+            Scene scene = new Scene(root, Utils.getScreenWidth(), Utils.getScreenHeight());
+            Stage stage = new Stage();
+            stage.setMaximized(true);
+            stage.setOnCloseRequest(event -> {
+                Thread t = new Thread(() -> {
+                    try {
+                        serverServices.cancelControl(destination);
+                    } catch (IOException e) {
+                        logger.error(e.getMessage());
+                    }
+                });
+                t.start();
+            });
+            stage.setTitle("Stream");
+            stage.setScene(scene);
+            stage.show();
+
+            serverServices.requestControl(destination);
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
+    }
+
+    @Override
+    public void stopGivingControl() {
+        screenLiveStream.stopStreaming();
+    }
+
+    @Override
+    public void startGivingControl(User destination, ScreenInformation screenInformation) {
+        logger.info("Starting giving control to : " + destination);
+        try {
+            screenLiveStream.startStreaming(destination, screenInformation);
+        } catch (IOException | AWTException e) {
+            logger.error(e.getMessage());
+        }
+    }
+
+    @Override
+    public void sendFrame(User destination, Frame frame) {
+        logger.info("Sending frame to : " + destination);
+        try {
+            serverServices.sendFrame(destination, frame);
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
     }
 }

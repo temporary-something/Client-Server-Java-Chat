@@ -22,4 +22,8 @@ public interface ServerServices {
     void requestAudio(User source, long audioId) throws IOException ;
     void prepareReceiveAudio(AudioDescriptor audioDescriptor, User source) throws IOException;
     void receiveAudio(AudioContent audioContent);
+
+    void requestControl(User destination) throws IOException;
+    void cancelControl(User destination) throws IOException;
+    void sendFrame(User destination, Frame frame) throws IOException;
 }

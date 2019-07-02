@@ -3,23 +3,28 @@ package network.impl;
 import com.google.inject.Inject;
 import com.sun.istack.internal.NotNull;
 import controller.ChatFunctionalities;
+import controller.ScreenFunctionalities;
 import model.*;
 import model.FileDescriptor;
+import model.Frame;
 import model.enums.RequestType;
 import network.InputStreamListener;
 import network.ServerServices;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.awt.*;
 import java.io.*;
 import java.net.Socket;
 import java.util.*;
+import java.util.List;
 
 public class ServerServicesImpl implements ServerServices, InputStreamListener {
 
     private static final Logger logger = LogManager.getLogger(ServerServicesImpl.class);
 
     @Inject private ChatFunctionalities chatController;
+    @Inject private ScreenFunctionalities screenController;
     @Inject private InputStreamReaderImpl isReader;
 
     private Socket connection = null;
@@ -145,6 +150,19 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
                         MessageContainer.newInstance(
                                 response.getSource(),
                                 (AudioMessageContent)response.getContent()));
+                break;
+            }
+            case CONTROL_REQUEST: {
+                chatController.startGivingControl(response.getSource(),
+                        (ScreenInformation)response.getContent());
+                break;
+            }
+            case FRAME: {
+                screenController.updateScreen((Frame)response.getContent());
+                break;
+            }
+            case END_CONTROL: {
+                chatController.stopGivingControl();
                 break;
             }
             case INSUFFICIENT_MEMORY: {
@@ -338,5 +356,22 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
         if (list.size() == audioDescriptor.getChunksTotalNumber()) {
             chatController.receiveAudio(audioDescriptor, list);
         }
+    }
+
+    @Override
+    public void requestControl(User destination) throws IOException {
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.sendRequest(this.buildRequest(RequestType.REQUEST_CONTROL,
+                ScreenInformation.newInstance(dim.width, dim.height), destination));
+    }
+
+    @Override
+    public void cancelControl(User destination) throws IOException {
+        this.sendRequest(this.buildRequest(RequestType.STOP_CONTROL, null, destination));
+    }
+
+    @Override
+    public void sendFrame(User destination, Frame frame) throws IOException {
+        this.sendRequest(this.buildRequest(RequestType.SEND_FRAME, frame, destination));
     }
 }

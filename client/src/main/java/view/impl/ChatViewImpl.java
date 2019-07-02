@@ -300,6 +300,12 @@ public class ChatViewImpl implements ChatView {
         t.start();
     }
 
+    @Override
+    public void requestControl(ActionEvent event) {
+        Thread t = new Thread(() -> chatController.requestControl(this.selectedUser));
+        t.start();
+    }
+
     private void startTask(final Task task) {
         Thread t = new Thread(task);
         t.setDaemon(true);

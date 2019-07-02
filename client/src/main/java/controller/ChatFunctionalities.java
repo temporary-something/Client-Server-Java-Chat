@@ -24,4 +24,8 @@ public interface ChatFunctionalities {
     void requestAudio(User source, long audioId);
     void receiveAudio(AudioDescriptor descriptor, List<AudioContent> list);
     void playAudio(byte[] audio);
+    void requestControl(User destination);
+    void startGivingControl(User destination, ScreenInformation screenInformation);
+    void stopGivingControl();
+    void sendFrame(User destination, Frame frame);
 }

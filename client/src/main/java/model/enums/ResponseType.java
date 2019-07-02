@@ -35,6 +35,13 @@ public enum ResponseType implements Serializable {
     //File successfully sent.
     AUDIO_SENT,
 
+    //Control request received
+    CONTROL_REQUEST,
+    //Receive a frame
+    FRAME,
+    //Stop sending frames
+    END_CONTROL,
+
     //Errors.
     WRONG_PARAMETERS, DESTINATION_NOT_FOUND, INTERNAL_SERVER_ERROR, INSUFFICIENT_MEMORY
 }

@@ -118,6 +118,18 @@ public class ClientProcessorImpl implements ClientProcessor {
                         sendAudio(request);
                         break;
                     }
+                    case REQUEST_CONTROL: {
+                        requestControl(request);
+                        break;
+                    }
+                    case SEND_FRAME: {
+                        sendFrame(request);
+                        break;
+                    }
+                    case STOP_CONTROL: {
+                        stopControl(request);
+                        break;
+                    }
                     case DISCONNECT: {
                         removeConnection();
                         return;
@@ -128,13 +140,12 @@ public class ClientProcessorImpl implements ClientProcessor {
                 }
             }
         } catch(SocketException e) {
-            System.err.println("Connexion Interrupted.");
-            e.printStackTrace();
+            System.err.println("Connexion Interrupted with : " + user);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        System.err.println("Connexion Lost.");
+        System.err.println("Connexion Lost with : " + user);
         //Treat it as a disconnection.
         this.removeConnection();
     }
@@ -415,6 +426,54 @@ public class ClientProcessorImpl implements ClientProcessor {
         for (AudioContent fc : list) {
             sendResponse(buildResponse(ResponseType.AUDIO_CHUNK, fc));
         }
+    }
+
+    @Override
+    public void requestControl(Request request) throws IOException {
+        if (request.getDestination() == null) {
+            handleError(ResponseType.WRONG_PARAMETERS);
+            return;
+        }
+
+        final ClientProcessor client = server.findClient(request.getDestination().getId());
+        if (client == null) {
+            handleError(ResponseType.DESTINATION_NOT_FOUND);
+            return;
+        }
+
+        client.sendResponse(buildResponse(ResponseType.CONTROL_REQUEST, request.getContent()));
+    }
+
+    @Override
+    public void stopControl(Request request) throws IOException {
+        if (request.getDestination() == null) {
+            handleError(ResponseType.WRONG_PARAMETERS);
+            return;
+        }
+
+        final ClientProcessor client = server.findClient(request.getDestination().getId());
+        if (client == null) {
+            handleError(ResponseType.DESTINATION_NOT_FOUND);
+            return;
+        }
+
+        client.sendResponse(buildResponse(ResponseType.END_CONTROL, request.getContent()));
+    }
+
+    @Override
+    public void sendFrame(Request request) throws IOException {
+        if (request.getDestination() == null) {
+            handleError(ResponseType.WRONG_PARAMETERS);
+            return;
+        }
+
+        final ClientProcessor client = server.findClient(request.getDestination().getId());
+        if (client == null) {
+            sendResponse(buildResponse(ResponseType.END_CONTROL, null));
+            return;
+        }
+
+        client.sendResponse(buildResponse(ResponseType.FRAME, request.getContent()));
     }
 
     @Override

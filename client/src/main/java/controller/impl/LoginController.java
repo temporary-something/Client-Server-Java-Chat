@@ -17,14 +17,11 @@ import java.io.IOException;
 
 public class LoginController implements LoginFunctionalities {
 
-    @Inject
-    private LoginView loginView;
+    @Inject private LoginView loginView;
 
-    @Inject
-    private ServerServices serverServices;
+    @Inject private ServerServices serverServices;
 
-    @Inject
-    private Injector injector;
+    @Inject private Injector injector;
 
     @Override
     public void connect(final Credentials credentials, final String host, final int port) {

@@ -36,16 +36,21 @@
                   <TextArea fx:id="txtMessage" prefHeight="152.0" prefWidth="478.0" promptText="Message ..." wrapText="true" />
                   <VBox alignment="CENTER" prefHeight="152.0" prefWidth="159.0">
                      <children>
-                        <Button fx:id="btnStopRecordAudio" disable="true" mnemonicParsing="false" onAction="#stopRecording" prefHeight="30.0" prefWidth="70.0" text="Stop" />
-                        <Button fx:id="btnRecordAudio" mnemonicParsing="false" onAction="#startRecording" prefHeight="30.0" prefWidth="70.0" text="Record" />
-                        <Button fx:id="btnUpload" mnemonicParsing="false" onAction="#uploadFile" prefHeight="30.0" prefWidth="70.0" text="Attach">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor></Button>
                         <Button fx:id="btnSend" mnemonicParsing="false" onAction="#sendMessage" prefHeight="30.0" prefWidth="70.0" text="Send">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="146.0">
+                           <children>
+                              <Button fx:id="btnRecordAudio" mnemonicParsing="false" onAction="#startRecording" prefHeight="30.0" prefWidth="70.0" text="Record" />
+                              <Button fx:id="btnStopRecordAudio" disable="true" mnemonicParsing="false" onAction="#stopRecording" prefHeight="30.0" prefWidth="70.0" text="Stop" textAlignment="CENTER" />
+                           </children>
+                        </HBox>
+                        <Button fx:id="btnUpload" mnemonicParsing="false" onAction="#uploadFile" prefHeight="30.0" prefWidth="70.0" text="Attach">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnTakeControl" mnemonicParsing="false" onAction="#requestControl" text="Take Contorl" />
                         <Button fx:id="btnDisconnect" mnemonicParsing="false" onAction="#disconnect" prefHeight="30.0" prefWidth="70.0" text="Exit" />
                      </children>
                   </VBox>

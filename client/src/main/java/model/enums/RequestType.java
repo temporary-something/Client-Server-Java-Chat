@@ -24,5 +24,11 @@ public enum RequestType implements Serializable {
     //To request information about an audio file.
     PREPARE_REQUEST_AUDIO,
     //To request an audio file.
-    REQUEST_AUDIO
+    REQUEST_AUDIO,
+    //To request the control of the destination's computer
+    REQUEST_CONTROL,
+    //To send a frame
+    SEND_FRAME,
+    //Stop sending frames
+    STOP_CONTROL
 }
