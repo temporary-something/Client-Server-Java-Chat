@@ -1,3 +1,0 @@
-[2019-07-02 21:55:37 498] INFO  network.impl.ServerServicesImpl - Request : Request{type=CONNECT, content=Credentials{username='Ryadh'}, destination=null}
-[2019-07-02 21:55:37 524] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:37 526] INFO  network.impl.ServerServicesImpl - Response{type=CONNECTED, content=ContextContent{users=[]}, source=Ryadh}

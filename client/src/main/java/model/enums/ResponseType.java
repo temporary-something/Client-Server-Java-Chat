@@ -41,6 +41,8 @@ public enum ResponseType implements Serializable {
     FRAME,
     //Stop sending frames
     END_CONTROL,
+    //Event provoked by controlling user
+    PROVOKE_EVENT,
 
     //Errors.
     WRONG_PARAMETERS, DESTINATION_NOT_FOUND, INTERNAL_SERVER_ERROR, INSUFFICIENT_MEMORY

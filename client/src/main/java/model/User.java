@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class User extends BasePojo {
 
     private static final long serialVersionUID = 4335390648613369110L;
@@ -27,6 +29,9 @@ public class User extends BasePojo {
 
     @Override
     public String toString() {
-        return name;
+        return "User{" +
+                "id=" + getId() +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

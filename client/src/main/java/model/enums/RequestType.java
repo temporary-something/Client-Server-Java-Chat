@@ -30,5 +30,7 @@ public enum RequestType implements Serializable {
     //To send a frame
     SEND_FRAME,
     //Stop sending frames
-    STOP_CONTROL
+    STOP_CONTROL,
+    //Request an event
+    PROVOKE_EVENT
 }

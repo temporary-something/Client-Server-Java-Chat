@@ -30,6 +30,7 @@ public interface ClientProcessor extends Runnable {
     void requestControl(final Request request) throws IOException;
     void stopControl(final Request request) throws IOException;
     void sendFrame(final Request request) throws IOException;
+    void provokeEvent(final Request request) throws IOException;
 
     void addUser(final User from, final Response response) throws IOException;
     void removeUser(final User from, final Response response) throws IOException;

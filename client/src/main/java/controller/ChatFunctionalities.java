@@ -28,4 +28,5 @@ public interface ChatFunctionalities {
     void startGivingControl(User destination, ScreenInformation screenInformation);
     void stopGivingControl();
     void sendFrame(User destination, Frame frame);
+    void provokeEvent(Event event);
 }

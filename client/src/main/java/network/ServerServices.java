@@ -15,15 +15,16 @@ public interface ServerServices {
     void sendFile(User destination, long fileId) throws IOException ;
     void requestFile(User source, long fileId) throws IOException ;
     void prepareReceiveFile(FileDescriptor fileDescriptor, User source) throws IOException;
-    void receiveFile(FileContent fileContent);
+    void receiveFile(User source, FileContent fileContent);
     //Audio methods
     void checkSendAudio(User destination, byte[] audio) throws IOException ;
     void sendAudio(User destination, long audioId) throws IOException ;
     void requestAudio(User source, long audioId) throws IOException ;
     void prepareReceiveAudio(AudioDescriptor audioDescriptor, User source) throws IOException;
-    void receiveAudio(AudioContent audioContent);
+    void receiveAudio(User source, AudioContent audioContent);
 
     void requestControl(User destination) throws IOException;
     void cancelControl(User destination) throws IOException;
     void sendFrame(User destination, Frame frame) throws IOException;
+    void sendEvent(User destination, Event event) throws IOException;
 }

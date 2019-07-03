@@ -1,9 +1,14 @@
 package util;
 
+import model.Event;
+import model.MouseEvent;
+
 import javax.imageio.ImageIO;
 import javax.sound.sampled.AudioFormat;
 import java.awt.*;
+import java.awt.event.InputEvent;
 import java.awt.image.BufferedImage;
+import java.awt.peer.RobotPeer;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 

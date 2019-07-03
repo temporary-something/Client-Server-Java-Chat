@@ -5,6 +5,7 @@ import com.sun.istack.internal.NotNull;
 import controller.ChatFunctionalities;
 import controller.ScreenFunctionalities;
 import model.*;
+import model.Event;
 import model.FileDescriptor;
 import model.Frame;
 import model.enums.RequestType;
@@ -34,15 +35,15 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     private Map<Long, File> files;
 
     //Files received/to receive.
-    private Map<Long, List<FileContent>> fileContents = new HashMap<>();
-    private Map<Long, FileDescriptor> fileDescriptors = new HashMap<>();
+    private Map<Long, Map<Long, List<FileContent>>> fileContents = new HashMap<>();
+    private Map<Long, Map<Long, FileDescriptor>> fileDescriptors = new HashMap<>();
 
     //Audios sent/to send.
     private Map<Long, byte[]> audios;
 
     //Audios received/to receive.
-    private Map<Long, List<AudioContent>> audioContents = new HashMap<>();
-    private Map<Long, AudioDescriptor> audioDescriptors = new HashMap<>();
+    private Map<Long, Map<Long, List<AudioContent>>> audioContents = new HashMap<>();
+    private Map<Long, Map<Long, AudioDescriptor>> audioDescriptors = new HashMap<>();
 
     private Request buildRequest(final RequestType type, Content content, final User destination) {
         return Request.newInstance(type, content, destination);
@@ -96,7 +97,7 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
                 break;
             }
             case FILE_CHUNK: {
-                receiveFile((FileContent) response.getContent());
+                receiveFile(response.getSource(), (FileContent) response.getContent());
                 break;
             }
             case PREPARE_RECEIVE_AUDIO: {
@@ -115,7 +116,7 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
                 break;
             }
             case AUDIO_CHUNK: {
-                receiveAudio((AudioContent) response.getContent());
+                receiveAudio(response.getSource(), (AudioContent) response.getContent());
                 break;
             }
             case MESSAGE_SENT: {
@@ -158,7 +159,11 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
                 break;
             }
             case FRAME: {
-                screenController.updateScreen((Frame)response.getContent());
+                screenController.updateScreen(response.getSource(), (Frame)response.getContent());
+                break;
+            }
+            case PROVOKE_EVENT: {
+                chatController.provokeEvent((Event)response.getContent());
                 break;
             }
             case END_CONTROL: {
@@ -272,8 +277,10 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     @Override
     public void prepareReceiveFile(FileDescriptor fileDescriptor, User source) throws IOException {
         //TODO: Test if there's enough memory available before sending the response.
-        fileDescriptors.put(fileDescriptor.getFileId(), fileDescriptor);
-        fileContents.put(fileDescriptor.getFileId(), new LinkedList<>());
+        fileDescriptors.put(source.getId(), new HashMap<>());
+        fileDescriptors.get(source.getId()).put(fileDescriptor.getFileId(), fileDescriptor);
+        fileContents.put(source.getId(), new HashMap<>());
+        fileContents.get(source.getId()).put(fileDescriptor.getFileId(), new LinkedList<>());
         this.sendRequest(buildRequest(
                 RequestType.REQUEST_FILE,
                 FileBasicInformation.newInstance(fileDescriptor.getFileId()),
@@ -281,11 +288,11 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     }
 
     @Override
-    public void receiveFile(FileContent fileContent) {
-        final List<FileContent> list = fileContents.get(fileContent.getFileId());
+    public void receiveFile(User source, FileContent fileContent) {
+        final List<FileContent> list = fileContents.get(source.getId()).get(fileContent.getFileId());
         list.add(fileContent);
 
-        final FileDescriptor fileDescriptor = fileDescriptors.get(fileContent.getFileId());
+        final FileDescriptor fileDescriptor = fileDescriptors.get(source.getId()).get(fileContent.getFileId());
         if (list.size() == fileDescriptor.getChunksTotalNumber()) {
             chatController.receiveFile(fileDescriptor, list);
         }
@@ -339,8 +346,10 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     @Override
     public void prepareReceiveAudio(AudioDescriptor audioDescriptor, User source) throws IOException {
         //TODO: Test if there's enough memory available before sending the response.
-        audioDescriptors.put(audioDescriptor.getAudioId(), audioDescriptor);
-        audioContents.put(audioDescriptor.getAudioId(), new LinkedList<>());
+        audioDescriptors.put(source.getId(), new HashMap<>());
+        audioDescriptors.get(source.getId()).put(audioDescriptor.getAudioId(), audioDescriptor);
+        audioContents.put(source.getId(), new HashMap<>());
+        audioContents.get(source.getId()).put(audioDescriptor.getAudioId(), new LinkedList<>());
         this.sendRequest(buildRequest(
                 RequestType.REQUEST_AUDIO,
                 AudioBasicInformation.newInstance(audioDescriptor.getAudioId()),
@@ -348,11 +357,11 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     }
 
     @Override
-    public void receiveAudio(AudioContent audioContent) {
-        final List<AudioContent> list = audioContents.get(audioContent.getAudioId());
+    public void receiveAudio(User source, AudioContent audioContent) {
+        final List<AudioContent> list = audioContents.get(source.getId()).get(audioContent.getAudioId());
         list.add(audioContent);
 
-        final AudioDescriptor audioDescriptor = audioDescriptors.get(audioContent.getAudioId());
+        final AudioDescriptor audioDescriptor = audioDescriptors.get(source.getId()).get(audioContent.getAudioId());
         if (list.size() == audioDescriptor.getChunksTotalNumber()) {
             chatController.receiveAudio(audioDescriptor, list);
         }
@@ -373,5 +382,10 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
     @Override
     public void sendFrame(User destination, Frame frame) throws IOException {
         this.sendRequest(this.buildRequest(RequestType.SEND_FRAME, frame, destination));
+    }
+
+    @Override
+    public void sendEvent(User destination, Event event) throws IOException {
+        this.sendRequest(this.buildRequest(RequestType.PROVOKE_EVENT, event, destination));
     }
 }

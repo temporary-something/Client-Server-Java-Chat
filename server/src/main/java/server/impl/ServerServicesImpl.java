@@ -3,6 +3,8 @@ package server.impl;
 import client.ClientProcessor;
 import client.impl.ClientProcessorImpl;
 import model.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import server.ServerServices;
 
 import java.io.IOException;
@@ -13,6 +15,8 @@ import java.util.Collection;
 import java.util.HashMap;
 
 public class ServerServicesImpl implements ServerServices {
+
+    private static final Logger logger = LogManager.getLogger(ServerServicesImpl.class);
 
     private ServerSocket server = null;
     private boolean isRunning = true;
@@ -30,11 +34,12 @@ public class ServerServicesImpl implements ServerServices {
 
     @Override
     public void open() {
+        logger.info("Server Initialized.");
         Thread t = new Thread(() -> {
             while(isRunning){
                 try {
                     Socket client = server.accept();
-                    System.out.println("Client Connection received.");
+                    logger.info("Client Connection received.");
                     Thread t1 = new Thread(new ClientProcessorImpl(client, this));
                     t1.start();
                 } catch (IOException e) {

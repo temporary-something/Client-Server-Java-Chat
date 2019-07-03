@@ -194,12 +194,13 @@ public class ChatViewImpl implements ChatView {
                 //Update the number of connected users.
                 lblConnected.setText(""+listUsers.getItems().size());
 
+                if (!conversations.containsKey( task.getValue().getId()))
+                    conversations.put(task.getValue().getId(), FXCollections.observableArrayList());
+
                 //If it is the only connected user, select him for a conversation.
                 if (listUsers.getItems().size() == 1) {
                     selectedUser = task.getValue();
                     listUsers.getSelectionModel().select(selectedUser);
-                    if (!conversations.containsKey( task.getValue().getId()))
-                        conversations.put(task.getValue().getId(), FXCollections.observableArrayList());
                     listMessages.setItems(conversations.get(task.getValue().getId()));
                 }
             }
@@ -302,8 +303,7 @@ public class ChatViewImpl implements ChatView {
 
     @Override
     public void requestControl(ActionEvent event) {
-        Thread t = new Thread(() -> chatController.requestControl(this.selectedUser));
-        t.start();
+        chatController.requestControl(this.selectedUser);
     }
 
     private void startTask(final Task task) {

@@ -5,6 +5,8 @@ import com.sun.istack.internal.NotNull;
 import model.*;
 import model.FileDescriptor;
 import model.enums.ResponseType;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import server.ServerServices;
 
 import java.io.*;
@@ -13,6 +15,8 @@ import java.net.SocketException;
 import java.util.*;
 
 public class ClientProcessorImpl implements ClientProcessor {
+
+    private static final Logger logger = LogManager.getLogger(ClientProcessorImpl.class);
 
     private final Socket socket;
     private final ServerServices server;
@@ -55,7 +59,7 @@ public class ClientProcessorImpl implements ClientProcessor {
 
     private Request getRequest() throws IOException, ClassNotFoundException {
         Object obj = reader.readObject();
-        System.out.println(obj);
+        logger.info(obj);
         if (obj instanceof Request) return (Request)obj;
         return null;
     }
@@ -71,11 +75,11 @@ public class ClientProcessorImpl implements ClientProcessor {
                 final Request request = getRequest();
 
                 if (!isRunning) {
-                    System.err.println("Connexion ended by Server ...");
+                    logger.error("Connexion ended by Server ...");
                     break;
                 }
                 if (request == null) {
-                    System.err.println("Request is empty.");
+                    logger.error("Request is empty.");
                     handleError(ResponseType.WRONG_PARAMETERS);
                 } else switch (request.getType()) {
                     case CONNECT: {
@@ -126,6 +130,10 @@ public class ClientProcessorImpl implements ClientProcessor {
                         sendFrame(request);
                         break;
                     }
+                    case PROVOKE_EVENT: {
+                        provokeEvent(request);
+                        break;
+                    }
                     case STOP_CONTROL: {
                         stopControl(request);
                         break;
@@ -135,24 +143,24 @@ public class ClientProcessorImpl implements ClientProcessor {
                         return;
                     }
                     default: {
-                        System.err.println("Unexpected value : " + request.getType());
+                        logger.error("Unexpected value : " + request.getType());
                     }
                 }
             }
         } catch(SocketException e) {
-            System.err.println("Connexion Interrupted with : " + user);
+            logger.info("Connexion Interrupted with : " + user);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        System.err.println("Connexion Lost with : " + user);
+        logger.info("Connexion Lost with : " + user);
         //Treat it as a disconnection.
         this.removeConnection();
     }
 
     @Override
     public void acceptConnection(Request request) throws IOException {
-        System.err.println("Connexion Accepted.");
+        logger.info("Connexion Accepted.");
 
         //Creating a User corresponding to the current connexion and adding it to the global list of Users.
         user = User.newInstance(socket.getInetAddress().getHostAddress(), ((Credentials)request.getContent()).getUsername());
@@ -168,12 +176,12 @@ public class ClientProcessorImpl implements ClientProcessor {
         long id = user.getId();
         synchronized (this.users) {
             for (User u : users) {
-                System.err.println("Sending Response (ADD) to User : " + u.getId() + " From : " + id);
+                logger.info("Sending Response (ADD) to User : " + u.getId() + " From : " + id);
                 client = server.findClient(u.getId());
                 if (client != null) {
                     client.addUser(user, response);
                 } else {
-                    System.err.println("Couldn't find Client for User : " + u.getId() + " From : " + id);
+                    logger.warn("Couldn't find Client for User : " + u.getId() + " From : " + id);
                 }
             }
         }
@@ -181,7 +189,7 @@ public class ClientProcessorImpl implements ClientProcessor {
 
     @Override
     public void removeConnection() {
-        System.err.println("Disconnection from User : " + user.getId());
+        logger.info("Disconnection from User : " + user.getId());
         this.close();
         this.removeUser();
     }
@@ -197,17 +205,17 @@ public class ClientProcessorImpl implements ClientProcessor {
         final long id = user.getId();
         synchronized (this.users) {
             for (User u : users) {
-                System.err.println("Sending Response (REMOVE) to User : " + u.getId() + " From : " + id);
+                logger.info("Sending Response (REMOVE) to User : " + u.getId() + " From : " + id);
                 client = server.findClient(u.getId());
                 if (client != null) {
                     try {
                         client.removeUser(user, response);
                     } catch (IOException e) {
-                        System.err.println("Exception while removing user ...");
+                        logger.error("Exception while removing user ...");
                         e.printStackTrace();
                     }
                 } else {
-                    System.err.println("Couldn't find Client for User : " + u.getId() + " From : " + id);
+                    logger.warn("Couldn't find Client for User : " + u.getId() + " From : " + id);
                 }
             }
         }
@@ -327,7 +335,7 @@ public class ClientProcessorImpl implements ClientProcessor {
         }
 
         for (FileContent fc : list) {
-            sendResponse(buildResponse(ResponseType.FILE_CHUNK, fc));
+            sendResponse(buildResponse(ResponseType.FILE_CHUNK, fc, request.getDestination()));
         }
     }
 
@@ -424,7 +432,7 @@ public class ClientProcessorImpl implements ClientProcessor {
         }
 
         for (AudioContent fc : list) {
-            sendResponse(buildResponse(ResponseType.AUDIO_CHUNK, fc));
+            sendResponse(buildResponse(ResponseType.AUDIO_CHUNK, fc, request.getDestination()));
         }
     }
 
@@ -474,6 +482,22 @@ public class ClientProcessorImpl implements ClientProcessor {
         }
 
         client.sendResponse(buildResponse(ResponseType.FRAME, request.getContent()));
+    }
+
+    @Override
+    public void provokeEvent(Request request) throws IOException {
+        if (request.getDestination() == null) {
+            handleError(ResponseType.WRONG_PARAMETERS);
+            return;
+        }
+
+        final ClientProcessor client = server.findClient(request.getDestination().getId());
+        if (client == null) {
+            sendResponse(buildResponse(ResponseType.DESTINATION_NOT_FOUND, null));
+            return;
+        }
+
+        client.sendResponse(buildResponse(ResponseType.PROVOKE_EVENT, request.getContent()));
     }
 
     @Override

@@ -1,50 +1,5 @@
-[2019-07-02 21:55:43 488] INFO  network.impl.ServerServicesImpl - Request : Request{type=CONNECT, content=Credentials{username='Ryadh'}, destination=null}
-[2019-07-02 21:55:43 521] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:43 521] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:43 522] INFO  network.impl.ServerServicesImpl - Response{type=ADD_USER, content=null, source=Ryadh}
-[2019-07-02 21:55:43 522] INFO  network.impl.ServerServicesImpl - Response{type=CONNECTED, content=ContextContent{users=[Ryadh]}, source=Ryadh}
-[2019-07-02 21:55:44 960] INFO  controller.impl.ChatController - Requesting control from user : Ryadh
-[2019-07-02 21:55:45 019] INFO  network.impl.ServerServicesImpl - Request : Request{type=REQUEST_CONTROL, content=ScreenInformation{width=1920, height=1080}, destination=Ryadh}
-[2019-07-02 21:55:45 040] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:45 040] INFO  network.impl.ServerServicesImpl - Response{type=CONTROL_REQUEST, content=ScreenInformation{width=1920, height=1080}, source=Ryadh}
-[2019-07-02 21:55:45 041] INFO  controller.impl.ChatController - Starting giving control to : Ryadh
-[2019-07-02 21:55:45 042] INFO  util.image.impl.ScreenLiveStreamImpl - Streaming started
-[2019-07-02 21:55:45 591] INFO  controller.impl.ChatController - Sending frame to : Ryadh
-[2019-07-02 21:55:45 591] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7b7fcc9c, destination=Ryadh}
-[2019-07-02 21:55:45 595] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:45 595] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@19080aa7, source=Ryadh}
-[2019-07-02 21:55:46 400] INFO  controller.impl.ChatController - Sending frame to : Ryadh
-[2019-07-02 21:55:46 401] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7f2043bc, destination=Ryadh}
-[2019-07-02 21:55:46 402] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:46 402] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@56cd6e76, source=Ryadh}
-[2019-07-02 21:55:47 171] INFO  controller.impl.ChatController - Sending frame to : Ryadh
-[2019-07-02 21:55:47 171] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@352e9205, destination=Ryadh}
-[2019-07-02 21:55:47 172] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:47 172] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@6737c675, source=Ryadh}
-[2019-07-02 21:55:47 942] INFO  controller.impl.ChatController - Sending frame to : Ryadh
-[2019-07-02 21:55:47 942] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@1572f3f6, destination=Ryadh}
-[2019-07-02 21:55:47 944] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:47 944] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@2516e124, source=Ryadh}
-[2019-07-02 21:55:48 734] INFO  controller.impl.ChatController - Sending frame to : Ryadh
-[2019-07-02 21:55:48 735] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@259d487f, destination=Ryadh}
-[2019-07-02 21:55:48 737] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:48 738] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@669efab3, source=Ryadh}
-[2019-07-02 21:55:49 554] INFO  controller.impl.ChatController - Sending frame to : Ryadh
-[2019-07-02 21:55:49 556] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4eaf8d36, destination=Ryadh}
-[2019-07-02 21:55:49 562] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:49 562] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@33ac2777, source=Ryadh}
-[2019-07-02 21:55:50 346] INFO  controller.impl.ChatController - Sending frame to : Ryadh
-[2019-07-02 21:55:50 346] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@21b1c522, destination=Ryadh}
-[2019-07-02 21:55:50 348] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:50 349] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@484653ea, source=Ryadh}
-[2019-07-02 21:55:51 114] INFO  controller.impl.ChatController - Sending frame to : Ryadh
-[2019-07-02 21:55:51 115] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@5d8b5891, destination=Ryadh}
-[2019-07-02 21:55:51 117] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:51 117] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7c8326c7, source=Ryadh}
-[2019-07-02 21:55:51 898] INFO  controller.impl.ChatController - Sending frame to : Ryadh
-[2019-07-02 21:55:51 898] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4dd22033, destination=Ryadh}
-[2019-07-02 21:55:51 901] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:51 901] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5bc99f51, source=Ryadh}
-[2019-07-02 21:55:51 955] INFO  network.impl.ServerServicesImpl - Request : Request{type=STOP_CONTROL, content=null, destination=Ryadh}
-[2019-07-02 21:55:51 974] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-02 21:55:51 975] INFO  network.impl.ServerServicesImpl - Response{type=END_CONTROL, content=null, source=Ryadh}
+[2019-07-03 00:58:09 691] INFO  network.impl.ServerServicesImpl - Request : Request{type=CONNECT, content=Credentials{username='Ryadh'}, destination=null}
+[2019-07-03 00:58:09 745] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 00:58:09 746] INFO  network.impl.ServerServicesImpl - Response{type=CONNECTED, content=ContextContent{users=[]}, source=User{id=1, name='Ryadh'}}
+[2019-07-03 00:59:34 650] INFO  network.impl.InputStreamReaderImpl - End of connection ...
+[2019-07-03 00:59:34 651] INFO  network.impl.InputStreamReaderImpl - Leaving InputStreamReaderImpl ...

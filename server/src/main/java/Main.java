@@ -9,6 +9,5 @@ public class Main {
 
         ServerServices server = new ServerServicesImpl(host, port);
         server.open();
-        System.out.println("Server Initialized.");
     }
 }

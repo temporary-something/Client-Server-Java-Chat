@@ -1,12 +1,12 @@
 package view;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
 import model.Frame;
 
 public interface ScreenView extends Initializable {
 
     void updateScreen(Frame frame);
-    void clickEvent(ActionEvent event);
-    void moveEvent(ActionEvent event);
+    void clickEvent(MouseEvent event);
+    void moveEvent(MouseEvent event);
 }

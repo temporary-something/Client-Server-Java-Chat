@@ -1,0 +1,3 @@
+[2019-07-03 00:58:09 729] INFO  client.impl.ClientProcessorImpl - Request{type=CONNECT, content=Credentials{username='Ryadh'}, destination=null}
+[2019-07-03 00:58:09 734] INFO  client.impl.ClientProcessorImpl - Connexion Accepted.
+[2019-07-03 00:59:41 467] INFO  server.impl.ServerServicesImpl - Server Initialized.

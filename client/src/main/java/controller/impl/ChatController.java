@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.*;
+import model.Event;
 import model.Frame;
 import network.ServerServices;
 import org.apache.logging.log4j.LogManager;
@@ -192,7 +193,14 @@ public class ChatController implements ChatFunctionalities {
             stage.setScene(scene);
             stage.show();
 
-            serverServices.requestControl(destination);
+            Thread t = new Thread(() -> {
+                try {
+                    serverServices.requestControl(destination);
+                } catch (IOException e) {
+                    logger.error(e.getMessage());
+                }
+            });
+            t.start();
         } catch (IOException e) {
             logger.error(e.getMessage());
         }
@@ -206,11 +214,14 @@ public class ChatController implements ChatFunctionalities {
     @Override
     public void startGivingControl(User destination, ScreenInformation screenInformation) {
         logger.info("Starting giving control to : " + destination);
-        try {
-            screenLiveStream.startStreaming(destination, screenInformation);
-        } catch (IOException | AWTException e) {
-            logger.error(e.getMessage());
-        }
+        Thread t = new Thread(() -> {
+            try {
+                screenLiveStream.startStreaming(destination, screenInformation);
+            } catch (IOException | AWTException e) {
+                logger.error(e.getMessage());
+            }
+        });
+        t.start();
     }
 
     @Override
@@ -221,5 +232,10 @@ public class ChatController implements ChatFunctionalities {
         } catch (IOException e) {
             logger.error(e.getMessage());
         }
+    }
+
+    @Override
+    public void provokeEvent(Event event) {
+        screenLiveStream.provokeEvent(event);
     }
 }
