@@ -24,16 +24,18 @@ public class ServerServicesImpl implements ServerServices {
     private static final HashMap<Long, User> users = new HashMap<>();
     private static final HashMap<Long, ClientProcessor> clients = new HashMap<>();
 
-    public ServerServicesImpl(String host, int port){
+    public ServerServicesImpl() {
+
+    }
+
+    @Override
+    public void open(String host, int port) {
+        logger.info("Opening server with Ip Address : " + host + ", and Port : " + port +".");
         try {
             server = new ServerSocket(port, 100, InetAddress.getByName(host));
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void open() {
         logger.info("Server Initialized.");
         Thread t = new Thread(() -> {
             while(isRunning){

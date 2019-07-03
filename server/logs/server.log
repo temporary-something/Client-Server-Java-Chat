@@ -1,3 +1,8 @@
 [2019-07-03 00:58:09 729] INFO  client.impl.ClientProcessorImpl - Request{type=CONNECT, content=Credentials{username='Ryadh'}, destination=null}
 [2019-07-03 00:58:09 734] INFO  client.impl.ClientProcessorImpl - Connexion Accepted.
 [2019-07-03 00:59:41 467] INFO  server.impl.ServerServicesImpl - Server Initialized.
+[2019-07-03 01:17:29 322] INFO  server.impl.ServerServicesImpl - Server Initialized.
+[2019-07-03 01:17:50 547] INFO  server.impl.ServerServicesImpl - Server Initialized.
+[2019-07-03 01:18:17 646] INFO  server.impl.ServerServicesImpl - Server Initialized.
+[2019-07-03 01:19:06 611] INFO  server.impl.ServerServicesImpl - Opening server with Ip Address : 0.0.0.0, and Port : 6666
+[2019-07-03 01:19:06 615] INFO  server.impl.ServerServicesImpl - Server Initialized.

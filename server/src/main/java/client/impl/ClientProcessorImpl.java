@@ -18,8 +18,8 @@ public class ClientProcessorImpl implements ClientProcessor {
 
     private static final Logger logger = LogManager.getLogger(ClientProcessorImpl.class);
 
-    private final Socket socket;
-    private final ServerServices server;
+    private Socket socket;
+    private ServerServices server;
     private ObjectOutputStream writer;
     private ObjectInputStream reader;
 
@@ -34,6 +34,10 @@ public class ClientProcessorImpl implements ClientProcessor {
     private User user;
 
     private boolean isRunning = true;
+
+    public ClientProcessorImpl() {
+
+    }
 
     public ClientProcessorImpl(final Socket socket, final ServerServices server) {
         this.socket = socket;

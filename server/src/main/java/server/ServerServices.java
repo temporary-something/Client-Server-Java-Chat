@@ -7,7 +7,7 @@ import java.util.Collection;
 
 public interface ServerServices {
 
-    void open();
+    void open(String host, int port);
     void close();
     ClientProcessor findClient(long id);
     void addUser(User user, ClientProcessor clientProcessor, Collection<User> clientUsers);
