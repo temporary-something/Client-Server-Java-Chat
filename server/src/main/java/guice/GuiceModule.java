@@ -12,6 +12,5 @@ public class GuiceModule extends AbstractModule {
     protected void configure() {
         bind(ServerServices.class).to(ServerServicesImpl.class).asEagerSingleton();
         bind(ClientProcessor.class).to(ClientProcessorImpl.class);
-
     }
 }

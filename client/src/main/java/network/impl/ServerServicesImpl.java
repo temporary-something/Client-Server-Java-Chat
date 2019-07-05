@@ -10,6 +10,7 @@ import model.FileDescriptor;
 import model.Frame;
 import model.enums.RequestType;
 import network.InputStreamListener;
+import network.InputStreamReader;
 import network.ServerServices;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,7 +27,7 @@ public class ServerServicesImpl implements ServerServices, InputStreamListener {
 
     @Inject private ChatFunctionalities chatController;
     @Inject private ScreenFunctionalities screenController;
-    @Inject private InputStreamReaderImpl isReader;
+    @Inject private InputStreamReader isReader;
 
     private Socket connection = null;
     private ObjectOutputStream writer = null;

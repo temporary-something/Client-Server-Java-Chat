@@ -14,7 +14,7 @@ import java.net.SocketException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class InputStreamReaderImpl implements Runnable, InputStreamReader {
+public class InputStreamReaderImpl implements InputStreamReader {
 
     private static final Logger logger = LogManager.getLogger(InputStreamReaderImpl.class);
 

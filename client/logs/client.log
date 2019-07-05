@@ -1,5 +1,719 @@
-[2019-07-03 00:58:09 691] INFO  network.impl.ServerServicesImpl - Request : Request{type=CONNECT, content=Credentials{username='Ryadh'}, destination=null}
-[2019-07-03 00:58:09 745] INFO  network.impl.ServerServicesImpl - Handle Responses called.
-[2019-07-03 00:58:09 746] INFO  network.impl.ServerServicesImpl - Response{type=CONNECTED, content=ContextContent{users=[]}, source=User{id=1, name='Ryadh'}}
-[2019-07-03 00:59:34 650] INFO  network.impl.InputStreamReaderImpl - End of connection ...
-[2019-07-03 00:59:34 651] INFO  network.impl.InputStreamReaderImpl - Leaving InputStreamReaderImpl ...
+[2019-07-03 17:16:16 498] INFO  network.impl.ServerServicesImpl - Request : Request{type=CONNECT, content=Credentials{username='Ryadh'}, destination=null}
+[2019-07-03 17:16:16 541] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:16:16 541] INFO  network.impl.ServerServicesImpl - Response{type=CONNECTED, content=ContextContent{users=[]}, source=User{id=1, name='Ryadh'}}
+[2019-07-03 17:16:45 411] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:16:45 411] INFO  network.impl.ServerServicesImpl - Response{type=ADD_USER, content=null, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:16:56 157] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:16:56 159] INFO  network.impl.ServerServicesImpl - Response{type=CONTROL_REQUEST, content=ScreenInformation{width=1366, height=768}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:16:56 160] INFO  controller.impl.ChatController - Starting giving control to : User{id=5, name='Ryadh'}
+[2019-07-03 17:16:56 161] INFO  util.image.impl.ScreenLiveStreamImpl - Streaming started
+[2019-07-03 17:16:57 006] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:16:57 007] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@72f03efc, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:16:57 779] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:16:57 780] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@52879300, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:16:58 488] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:16:58 488] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7d4f8b6b, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:16:59 206] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:16:59 206] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7c8a395, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:16:59 884] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:16:59 885] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@c1c4cbf, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:00 564] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:00 564] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4f2e3491, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:01 233] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:01 234] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@5e65d567, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:01 898] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:01 899] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@5ce52f6b, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:02 577] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:02 578] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@348086b5, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:02 848] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:02 849] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=765.0, posY=31.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:03 294] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:03 294] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@24accccd, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:04 030] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:04 030] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@28ebdf82, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:04 712] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:04 712] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@58aa0fa7, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:05 388] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:05 388] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@78438479, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:06 051] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:06 052] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@15acbae, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:06 719] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:06 720] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@56534db0, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:07 388] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:07 388] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@321be2d4, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:08 053] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:08 054] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@1136721a, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:08 724] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:08 724] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@850e21d, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:09 406] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:09 406] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@540b7789, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:10 591] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:10 591] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@234f97b0, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:11 269] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:11 269] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@261a20, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:11 937] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:11 938] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@1cd49dc6, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:12 278] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:12 278] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=1253.0, posY=7.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:12 618] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:12 619] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@3fa96015, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:13 285] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:13 286] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7e9de351, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:13 951] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:13 952] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7fe040c5, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:14 618] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:14 618] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@51433cae, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:15 285] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:15 285] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@5970d807, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:15 950] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:15 951] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@47056222, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:16 617] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:16 618] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@159a51f6, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:17 272] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:17 272] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=877.0, posY=392.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:17 285] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:17 286] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7c872af4, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:17 955] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:17 955] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@1686fb00, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:18 622] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:18 622] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@3aa723f7, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:19 290] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:19 291] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@455ef741, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:19 388] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:19 388] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=877.0, posY=392.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:19 976] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:19 977] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@e364781, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:20 655] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:20 655] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@23402262, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:21 338] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:21 338] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@3ba8136f, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:21 999] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:22 000] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=902.0, posY=394.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:22 009] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:22 009] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@71f59307, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:22 684] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:22 684] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@28de45b0, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:23 351] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:23 351] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@696ec00, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:23 786] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:23 786] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=892.0, posY=366.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:24 022] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:24 022] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@6ca732f, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:24 700] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:24 701] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7a20b00d, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:25 352] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:25 352] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=858.0, posY=394.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:25 376] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:25 376] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@447dd6c4, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:26 238] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:26 238] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@76687e33, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:26 586] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:26 586] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=835.0, posY=388.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:26 928] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:26 928] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4b2b7d14, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:27 601] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:27 601] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@6f08b2c3, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:28 269] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:28 270] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@6eb35b68, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:28 934] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:28 935] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@5a033860, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:29 599] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:29 599] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@f4035d2, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:30 265] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:30 265] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@6696a26, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:30 932] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:30 932] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@42de4411, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:31 617] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:31 618] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@11d1df7b, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:32 283] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:32 283] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@63d28755, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:32 720] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:32 720] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=1260.0, posY=6.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:32 968] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:32 968] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@407ac6e9, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:33 632] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:33 632] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@6381fadf, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:34 299] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:34 299] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@15655c9c, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:34 966] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:34 966] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7e92191f, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:35 632] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:35 633] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@18a4e654, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:36 300] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:36 300] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@242e96e1, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:36 965] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:36 966] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@f5deb0a, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:37 633] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:37 633] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4cbe5408, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:38 298] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:38 299] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@63844917, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:38 962] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:38 962] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@3ff5f176, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:39 514] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:39 515] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=835.0, posY=390.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:39 648] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:39 648] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@3ee6e897, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:40 319] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:40 319] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@5a70a9c, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:40 984] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:40 984] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@416c840f, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:41 650] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:41 651] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@733584ea, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:42 317] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:42 318] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@6add0554, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:42 967] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:42 967] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=889.0, posY=325.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:42 984] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:42 984] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@253dde0a, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:43 649] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:43 649] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@1d682f8c, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:44 318] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:44 318] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@2c5acb99, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:44 643] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:44 643] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=862.0, posY=325.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:44 991] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:44 991] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@16fde1d3, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:45 656] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:45 656] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=832.0, posY=320.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:45 668] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:45 668] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@37416091, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:46 332] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:46 332] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@1a14e66d, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:46 965] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:46 965] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=819.0, posY=320.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:47 185] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:47 185] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@6aa316ee, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:47 853] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:47 853] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4617d7f7, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:47 985] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:47 985] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=796.0, posY=325.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:48 531] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:48 531] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@369ef1ed, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:48 879] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:48 879] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=790.0, posY=322.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:49 070] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:49 071] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=790.0, posY=322.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:49 211] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:49 211] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@283044d4, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:49 891] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:49 891] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7c06f617, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:50 073] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:50 073] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=850.0, posY=402.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:50 243] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:50 243] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=850.0, posY=402.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:50 484] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:50 484] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=850.0, posY=402.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:50 588] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:50 588] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4221a910, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:51 137] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:51 137] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=997.0, posY=407.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:51 268] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:51 269] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7b9dfea, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:51 960] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:51 960] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@21176496, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:52 635] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:52 636] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@3be66d4c, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:53 297] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:53 297] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@278b4265, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:53 987] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:53 987] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4abfe2a6, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:54 658] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:54 659] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@cbb0d6f, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:54 831] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:54 831] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=1005.0, posY=338.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:55 328] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:55 328] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@215d9973, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:55 996] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:55 996] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4930b535, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:56 663] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:56 663] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@257ba963, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:57 326] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:57 326] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4acead99, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:57 996] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:57 996] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@23d4e5ac, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:58 663] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:58 663] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@1ce24194, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:58 825] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:17:58 825] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=1197.0, posY=279.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:17:59 329] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:17:59 329] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@1d75928f, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:00 252] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:00 252] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@336852ff, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:00 930] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:00 930] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@3e423d3c, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:01 595] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:01 595] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@5c3cd8ff, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:02 262] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:02 262] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@73c88a09, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:02 930] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:02 930] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@53babbd, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:03 340] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:18:03 340] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=1188.0, posY=288.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:03 602] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:03 603] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@17aa6246, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:04 278] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:04 278] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@24950ef, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:04 946] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:04 947] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@596867f5, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:05 895] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:05 895] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@77aa8666, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:06 060] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:18:06 060] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=1174.0, posY=281.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:06 707] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:06 708] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@1d384020, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:07 381] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:07 381] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7e5b3b16, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:08 534] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:08 535] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@d80c9dd, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:09 209] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:09 209] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@354730a1, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:09 452] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:18:09 452] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=1068.0, posY=279.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:09 887] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:09 887] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@22d48dbf, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:10 561] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:10 561] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@520aecbd, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:11 224] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:11 225] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@67fb9474, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:11 893] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:11 893] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@46accffd, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:12 565] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:12 565] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@f21f817, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:13 008] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:18:13 008] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=1011.0, posY=285.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:13 232] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:13 232] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@71c6215d, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:13 895] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:13 896] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@24407c13, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:14 562] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:14 562] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@5714c482, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:15 226] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:15 227] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@9ceb825, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:15 895] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:15 895] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@5fc74330, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:16 042] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:18:16 042] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=885.0, posY=281.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:17 013] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:17 013] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@5b521f7b, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:17 677] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:17 677] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@687b63a5, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:18 343] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:18 344] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@1b3a868d, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:19 010] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:19 011] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7f691ffe, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:19 397] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:18:19 397] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=831.0, posY=285.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:19 682] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:19 682] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7083fa1f, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:20 363] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:20 364] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@df92b4, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:21 027] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:21 027] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@1de79316, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:21 694] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:21 694] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@41b5a6b9, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:21 825] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:18:21 825] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=778.0, posY=285.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:22 362] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:22 362] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@48b98b0a, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:23 023] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:23 024] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@488524ba, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:23 693] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:23 693] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@300ea06e, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:24 359] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:24 359] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@3e81664e, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:24 847] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:18:24 847] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=678.0, posY=284.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:25 031] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:25 031] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@32622644, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:25 711] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:25 711] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@62c63647, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:26 376] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:26 376] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@539f465b, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:27 039] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:27 039] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@22923881, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:27 709] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:27 710] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@71e63fb6, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:28 379] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:28 379] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@5b20de68, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:29 043] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:29 044] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4d7f5b6a, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:29 102] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:18:29 102] INFO  network.impl.ServerServicesImpl - Response{type=PROVOKE_EVENT, content=MouseEvent{posX=768.0, posY=234.0}, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:29 710] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:29 710] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@17d2d6c2, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:30 377] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:30 377] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4a778f4b, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:31 043] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:31 043] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@6a7d0284, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:31 709] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:31 709] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@39895b34, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:32 376] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:32 376] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@63192a88, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:33 043] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:33 043] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7008845c, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:33 708] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:33 708] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@573daffe, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:34 377] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:34 377] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@5dc204b9, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:35 043] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:35 043] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@7acd0674, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:35 708] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:35 708] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@19fadb09, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:36 376] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:36 377] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@2edbc867, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:37 043] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:37 043] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4ed34d4a, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:37 707] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:37 707] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@55eb99e9, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:38 377] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:38 377] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@4a7cece9, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:39 042] INFO  controller.impl.ChatController - Sending frame to : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:39 043] INFO  network.impl.ServerServicesImpl - Request : Request{type=SEND_FRAME, content=model.IFrame@68163780, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:39 051] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:18:39 051] INFO  network.impl.ServerServicesImpl - Response{type=END_CONTROL, content=null, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:18:58 190] INFO  controller.impl.ChatController - Requesting control from user : User{id=5, name='Ryadh'}
+[2019-07-03 17:18:58 415] INFO  network.impl.ServerServicesImpl - Request : Request{type=REQUEST_CONTROL, content=ScreenInformation{width=1920, height=1080}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:00 197] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:00 197] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@60b35b88, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:01 508] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:01 508] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@6b5c383b, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:02 644] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:02 644] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@20cc7b36, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:03 823] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:03 823] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@1e874d17, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:04 559] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1411.0, posY=60.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:05 035] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:05 036] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@2d70d1c3, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:06 296] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:06 296] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@42657f2d, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:07 492] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:07 492] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7fa0e845, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:08 715] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:08 715] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@6d06f681, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:09 202] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1783.0, posY=12.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:10 021] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:10 021] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@d84d8ae, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:11 187] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:11 188] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@22a36e4a, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:12 367] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:12 367] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@17767f4c, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:13 248] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=660.0, posY=24.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:13 705] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:13 705] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@6be36f97, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:14 906] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:14 906] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@10f6d6ce, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:16 074] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:16 074] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@2a0c9707, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:17 272] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=323.0, posY=27.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:18 149] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:18 149] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5e6eb767, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:19 316] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:19 316] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@4c58abab, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:20 446] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:20 447] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@66dabad8, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:21 593] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:21 593] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@4df336d5, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:21 923] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1568.0, posY=158.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:22 702] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:22 703] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7bd5fff6, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:23 811] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:23 811] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7c90aacc, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:24 236] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1035.0, posY=531.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:24 952] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:24 952] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@634cfb63, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:26 041] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:26 042] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@2791f5b2, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:27 132] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:27 132] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@21e426d0, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:28 226] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:28 226] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@58819fbb, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:29 376] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:29 376] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@495009e, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:30 499] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:30 499] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@609fb466, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:31 599] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:31 599] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@794c2098, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:32 668] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:32 668] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@322e9108, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:33 749] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:33 749] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@1a9ae2e9, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:34 541] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=589.0, posY=287.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:34 863] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:34 863] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@11fe28d4, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:35 962] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:35 962] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@21dbf2a0, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:37 085] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:37 085] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@33c69e35, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:38 170] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:38 170] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@340c0cfc, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:39 266] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:39 266] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@730ba63e, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:40 134] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=709.0, posY=368.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:40 337] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:40 337] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@31254ca4, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:41 420] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:41 420] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@29b837b4, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:42 497] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:42 497] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@48425a0a, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:43 601] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:43 602] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@226dac47, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:44 576] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=709.0, posY=368.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:44 703] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:44 703] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@65be5e31, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:45 799] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:45 799] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@382ac433, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:46 928] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:46 929] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@df82d47, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:47 523] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=168.0, posY=243.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:47 708] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=168.0, posY=243.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:48 031] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:48 031] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@1e87b268, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:49 117] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:49 117] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@712eb38b, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:50 196] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:50 196] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5f799966, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:50 884] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=465.0, posY=215.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:51 293] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:51 293] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@662d98e6, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:52 392] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:52 392] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3b97e85e, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:53 472] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:53 472] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@68ea6c14, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:54 414] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=148.0, posY=204.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:54 557] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:54 557] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7e49605b, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:54 598] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=148.0, posY=204.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:55 652] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:55 652] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@52b6810f, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:56 742] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:56 742] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@8daf9a3, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:57 853] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:57 853] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@6901da87, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:19:58 948] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:19:58 948] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@2888d301, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:00 101] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:00 101] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@43afc7eb, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:00 265] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=383.0, posY=128.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:01 207] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:01 207] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@56395709, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:01 613] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=383.0, posY=128.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:02 324] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:02 324] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7a27cae9, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:03 555] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:03 555] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7840a6cf, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:04 913] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:04 913] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@6d1b1891, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:06 129] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:06 129] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@f5e15a, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:07 297] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:07 297] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5c528f2a, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:08 472] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:08 472] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@65171476, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:09 706] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:09 706] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@67133236, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:11 000] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:11 001] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3a8e6459, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:12 377] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:12 377] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7e0c8082, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:13 657] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:13 658] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@28209dc7, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:15 083] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:15 083] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3408135f, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:16 389] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:16 389] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@15c13215, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:17 629] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:17 629] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3983e971, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:18 846] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:18 847] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@74eeac4f, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:20 044] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:20 044] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@1a72f85e, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:21 279] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:21 279] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@23cd7e34, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:22 468] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:22 468] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@134f080a, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:23 651] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:23 651] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@27355fc4, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:24 854] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:24 855] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3394c9b, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:26 058] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:26 058] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@6998015, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:27 284] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:27 284] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@1f62c552, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:28 484] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:28 484] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@1955c119, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:28 494] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1871.0, posY=14.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:29 578] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:29 578] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@314861a0, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:30 682] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:30 682] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7060bf77, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:31 763] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:31 763] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@269bbe49, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:32 857] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:32 857] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3561f1b8, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:33 231] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=149.0, posY=26.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:33 416] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=149.0, posY=26.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:33 961] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:33 961] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@1ac9208d, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:35 069] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:35 069] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3a61870, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:35 224] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=149.0, posY=26.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:36 174] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:36 174] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@1c2a50e6, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:37 277] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:37 277] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@11bc7c3d, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:38 388] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:38 389] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@57f8cf6f, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:39 557] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:39 557] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5b6ba6be, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:40 683] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:40 683] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@4b3d8c89, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:41 189] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=354.0, posY=34.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:41 842] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:41 842] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@357126b3, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:42 958] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:42 958] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@a3217af, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:44 112] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:44 112] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@1add3535, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:45 260] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:45 260] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@2da28b7d, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:46 557] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:46 557] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@696ec8b7, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:47 847] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:47 848] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@79f937c4, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:49 336] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:49 337] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@c9c0ff4, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:50 657] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:50 657] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@69c4f89, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:51 979] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:51 979] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@32fc56a0, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:53 260] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:53 261] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5ee90fce, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:54 718] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:54 718] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@1749f1f9, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:56 011] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:56 011] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5c3b1e0f, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:57 324] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:57 325] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@455560d5, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:58 732] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:58 732] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7f515e43, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:59 762] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1904.0, posY=12.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:20:59 995] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:20:59 995] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@2c2c8adb, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:01 227] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:01 227] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@534dc04a, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:02 487] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:02 487] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@efed5d4, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:03 637] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:03 637] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@48600253, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:04 883] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:04 884] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3dd41d41, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:06 056] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:06 056] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@6d1563bc, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:07 392] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:07 392] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3b54bf2c, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:08 591] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:08 591] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@646797a0, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:09 829] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:09 829] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@357d9cda, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:11 139] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:11 139] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@33cd6939, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:12 710] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:12 711] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@6bc7026d, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:13 878] INFO  network.impl.ServerServicesImpl - Request : Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1244.0, posY=662.0}, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:13 939] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:13 939] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3cce3fc, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:15 230] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:15 230] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@d9833eb, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:16 579] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:16 579] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@367d40b5, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:17 769] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:17 769] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@61f20738, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:19 172] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:19 172] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@6397f8c5, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:20 479] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:20 479] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@2412384a, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:21 718] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:21 718] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@457a607b, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:23 057] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:23 057] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3adb0ca7, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:24 291] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:24 292] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@59a9b158, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:25 520] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:25 521] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@793ec1e7, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:26 863] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:26 863] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@35d00d49, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:28 134] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:28 134] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@14f238d7, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:29 341] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:29 341] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5c5c879b, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:30 560] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:30 560] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@2bb6b1fe, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:31 846] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:31 846] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7cf6587d, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:33 526] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:33 526] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@6fe516df, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:34 766] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:34 766] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@34c28f5d, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:36 389] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:36 389] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5c52e788, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:37 620] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:37 620] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7732e06b, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:39 348] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:39 348] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5ac35831, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:40 552] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:40 552] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@214db664, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:41 767] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:41 767] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5f4f5387, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:42 929] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:42 929] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@800c25b, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:44 070] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:44 070] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@61825766, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:45 333] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:45 333] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5ffd9750, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:47 125] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:47 125] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@358b79d, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:48 814] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:48 814] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@55837ae3, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:50 367] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:50 367] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@743620e6, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:51 513] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:51 513] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@4b448123, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:52 579] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:52 579] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5b1b0da0, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:53 691] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:53 692] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@2f725a6d, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:54 790] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:54 790] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@2989d46d, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:55 912] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:55 912] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3bdfc04e, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:57 008] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:57 008] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@44ed652c, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:58 149] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:58 149] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@d9306f7, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:21:59 265] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:21:59 265] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7994202e, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:22:00 380] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:22:00 380] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@51d8d1af, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:22:01 494] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:22:01 494] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@fdea6bb, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:22:02 594] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:22:02 594] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5ace0a7f, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:22:03 709] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:22:03 709] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@15c54f9b, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:22:04 833] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:22:04 833] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@3a67b0a9, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:22:05 957] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:22:05 957] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@5bdf914, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:22:07 096] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:22:07 096] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@1b3a8ea2, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:22:08 234] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:22:08 234] INFO  network.impl.ServerServicesImpl - Response{type=FRAME, content=model.IFrame@7cbc20c6, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:22:09 286] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:22:09 286] INFO  network.impl.ServerServicesImpl - Response{type=REMOVE_USER, content=null, source=User{id=5, name='Ryadh'}}
+[2019-07-03 17:24:50 386] INFO  network.impl.ServerServicesImpl - Request : Request{type=STOP_CONTROL, content=null, destination=User{id=5, name='Ryadh'}}
+[2019-07-03 17:24:50 387] INFO  network.impl.ServerServicesImpl - Handle Responses called.
+[2019-07-03 17:24:50 387] INFO  network.impl.ServerServicesImpl - Response{type=DESTINATION_NOT_FOUND, content=null, source=User{id=1, name='Ryadh'}}
+[2019-07-03 17:24:50 388] ERROR network.impl.ServerServicesImpl - Destination Not Found.
+[2019-07-03 17:24:54 988] INFO  network.impl.ServerServicesImpl - Request : Request{type=DISCONNECT, content=null, destination=null}
+[2019-07-03 17:24:54 989] INFO  network.impl.InputStreamReaderImpl - End of connection ...
+[2019-07-03 17:24:54 989] INFO  network.impl.InputStreamReaderImpl - Leaving InputStreamReaderImpl ...

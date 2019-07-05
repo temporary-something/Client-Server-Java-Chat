@@ -46,7 +46,7 @@ public class ScreenLiveStreamImpl implements ScreenLiveStream {
             controller.sendFrame(destination, IFrame.newInstance(Utils.toByteArray(bi, IMAGE_FORMAT)));
 
             try {
-                Thread.sleep(2000);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 logger.error(e.getMessage());
             }

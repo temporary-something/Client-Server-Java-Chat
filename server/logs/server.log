@@ -6,3 +6,389 @@
 [2019-07-03 01:18:17 646] INFO  server.impl.ServerServicesImpl - Server Initialized.
 [2019-07-03 01:19:06 611] INFO  server.impl.ServerServicesImpl - Opening server with Ip Address : 0.0.0.0, and Port : 6666
 [2019-07-03 01:19:06 615] INFO  server.impl.ServerServicesImpl - Server Initialized.
+[2019-07-03 17:01:21 569] INFO  server.impl.ServerServicesImpl - Opening server with Ip Address : 0.0.0.0, and Port : 6666.
+[2019-07-03 17:01:21 580] INFO  server.impl.ServerServicesImpl - Server Initialized.
+[2019-07-03 17:02:32 989] INFO  server.impl.ServerServicesImpl - Client Connection received.
+[2019-07-03 17:02:33 067] INFO  client.impl.ClientProcessorImpl - Request{type=CONNECT, content=Credentials{username='Ryadh'}, destination=null}
+[2019-07-03 17:02:33 068] INFO  client.impl.ClientProcessorImpl - Connexion Accepted.
+[2019-07-03 17:15:28 297] INFO  client.impl.ClientProcessorImpl - Connexion Interrupted with : Ryadh
+[2019-07-03 17:15:28 297] INFO  client.impl.ClientProcessorImpl - Connexion Lost with : Ryadh
+[2019-07-03 17:15:28 297] INFO  client.impl.ClientProcessorImpl - Disconnection from User : 1
+[2019-07-03 17:15:59 239] INFO  server.impl.ServerServicesImpl - Opening server with Ip Address : 0.0.0.0, and Port : 6666.
+[2019-07-03 17:15:59 255] INFO  server.impl.ServerServicesImpl - Server Initialized.
+[2019-07-03 17:16:16 491] INFO  server.impl.ServerServicesImpl - Client Connection received.
+[2019-07-03 17:16:16 531] INFO  client.impl.ClientProcessorImpl - Request{type=CONNECT, content=Credentials{username='Ryadh'}, destination=null}
+[2019-07-03 17:16:16 532] INFO  client.impl.ClientProcessorImpl - Connexion Accepted.
+[2019-07-03 17:16:45 281] INFO  server.impl.ServerServicesImpl - Client Connection received.
+[2019-07-03 17:16:45 408] INFO  client.impl.ClientProcessorImpl - Request{type=CONNECT, content=Credentials{username='Ryadh'}, destination=null}
+[2019-07-03 17:16:45 409] INFO  client.impl.ClientProcessorImpl - Connexion Accepted.
+[2019-07-03 17:16:45 410] INFO  client.impl.ClientProcessorImpl - Sending Response (ADD) to User : 1 From : 5
+[2019-07-03 17:16:56 156] INFO  client.impl.ClientProcessorImpl - Request{type=REQUEST_CONTROL, content=ScreenInformation{width=1366, height=768}, destination=Ryadh}
+[2019-07-03 17:16:57 009] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1be26620, destination=Ryadh}
+[2019-07-03 17:16:57 780] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@292dd054, destination=Ryadh}
+[2019-07-03 17:16:58 489] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5e134b11, destination=Ryadh}
+[2019-07-03 17:16:59 207] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2acfffaa, destination=Ryadh}
+[2019-07-03 17:16:59 885] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@74507c7, destination=Ryadh}
+[2019-07-03 17:17:00 565] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6030af1f, destination=Ryadh}
+[2019-07-03 17:17:01 234] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3b9ebab0, destination=Ryadh}
+[2019-07-03 17:17:01 900] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2d935d7e, destination=Ryadh}
+[2019-07-03 17:17:02 579] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2436da99, destination=Ryadh}
+[2019-07-03 17:17:02 846] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=765.0, posY=31.0}, destination=Ryadh}
+[2019-07-03 17:17:03 295] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3ea82e0b, destination=Ryadh}
+[2019-07-03 17:17:04 031] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@674e50e4, destination=Ryadh}
+[2019-07-03 17:17:04 714] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@286ddc1e, destination=Ryadh}
+[2019-07-03 17:17:05 389] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@51f86acc, destination=Ryadh}
+[2019-07-03 17:17:06 053] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@74d96db2, destination=Ryadh}
+[2019-07-03 17:17:06 721] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3440df23, destination=Ryadh}
+[2019-07-03 17:17:07 389] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1a9b67f8, destination=Ryadh}
+[2019-07-03 17:17:08 054] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4a014cbe, destination=Ryadh}
+[2019-07-03 17:17:08 725] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@46b8a8af, destination=Ryadh}
+[2019-07-03 17:17:09 407] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2d46ef55, destination=Ryadh}
+[2019-07-03 17:17:10 592] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@318d091d, destination=Ryadh}
+[2019-07-03 17:17:11 270] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@67871d56, destination=Ryadh}
+[2019-07-03 17:17:11 939] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@47fae68d, destination=Ryadh}
+[2019-07-03 17:17:12 276] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1253.0, posY=7.0}, destination=Ryadh}
+[2019-07-03 17:17:12 620] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6d7b8c38, destination=Ryadh}
+[2019-07-03 17:17:13 286] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@452ccb4a, destination=Ryadh}
+[2019-07-03 17:17:13 952] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1f96dd39, destination=Ryadh}
+[2019-07-03 17:17:14 619] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@17f12f34, destination=Ryadh}
+[2019-07-03 17:17:15 286] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@292604e, destination=Ryadh}
+[2019-07-03 17:17:15 951] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@527e13c9, destination=Ryadh}
+[2019-07-03 17:17:16 618] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@48a5a505, destination=Ryadh}
+[2019-07-03 17:17:17 271] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=877.0, posY=392.0}, destination=Ryadh}
+[2019-07-03 17:17:17 286] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6c6f7f80, destination=Ryadh}
+[2019-07-03 17:17:17 955] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1ec9e04e, destination=Ryadh}
+[2019-07-03 17:17:18 623] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6e95167b, destination=Ryadh}
+[2019-07-03 17:17:19 292] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6127afa6, destination=Ryadh}
+[2019-07-03 17:17:19 387] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=877.0, posY=392.0}, destination=Ryadh}
+[2019-07-03 17:17:19 977] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@11732d7f, destination=Ryadh}
+[2019-07-03 17:17:20 656] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5605f17e, destination=Ryadh}
+[2019-07-03 17:17:21 339] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@20fe58cb, destination=Ryadh}
+[2019-07-03 17:17:21 999] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=902.0, posY=394.0}, destination=Ryadh}
+[2019-07-03 17:17:22 010] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@14a07358, destination=Ryadh}
+[2019-07-03 17:17:22 684] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6050235b, destination=Ryadh}
+[2019-07-03 17:17:23 352] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@50e37682, destination=Ryadh}
+[2019-07-03 17:17:23 785] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=892.0, posY=366.0}, destination=Ryadh}
+[2019-07-03 17:17:24 023] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@34f5a304, destination=Ryadh}
+[2019-07-03 17:17:24 701] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@629a56a6, destination=Ryadh}
+[2019-07-03 17:17:25 351] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=858.0, posY=394.0}, destination=Ryadh}
+[2019-07-03 17:17:25 376] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@46e4e7c3, destination=Ryadh}
+[2019-07-03 17:17:26 239] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3bb7324c, destination=Ryadh}
+[2019-07-03 17:17:26 585] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=835.0, posY=388.0}, destination=Ryadh}
+[2019-07-03 17:17:26 929] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@41a81d89, destination=Ryadh}
+[2019-07-03 17:17:27 602] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6def556d, destination=Ryadh}
+[2019-07-03 17:17:28 270] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4c9fd8a7, destination=Ryadh}
+[2019-07-03 17:17:28 936] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@52fc9893, destination=Ryadh}
+[2019-07-03 17:17:29 600] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3bd10044, destination=Ryadh}
+[2019-07-03 17:17:30 266] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3baeea7b, destination=Ryadh}
+[2019-07-03 17:17:30 933] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1dd74094, destination=Ryadh}
+[2019-07-03 17:17:31 619] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5df5c7c6, destination=Ryadh}
+[2019-07-03 17:17:32 284] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@860c2f8, destination=Ryadh}
+[2019-07-03 17:17:32 719] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1260.0, posY=6.0}, destination=Ryadh}
+[2019-07-03 17:17:32 969] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2d5331b6, destination=Ryadh}
+[2019-07-03 17:17:33 633] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@397dfe26, destination=Ryadh}
+[2019-07-03 17:17:34 299] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7994239, destination=Ryadh}
+[2019-07-03 17:17:34 967] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@587c7c4f, destination=Ryadh}
+[2019-07-03 17:17:35 633] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2f49dd1d, destination=Ryadh}
+[2019-07-03 17:17:36 301] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5401eda6, destination=Ryadh}
+[2019-07-03 17:17:36 966] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3e465842, destination=Ryadh}
+[2019-07-03 17:17:37 634] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4948509d, destination=Ryadh}
+[2019-07-03 17:17:38 299] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@589cc25, destination=Ryadh}
+[2019-07-03 17:17:38 963] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@43a10cd5, destination=Ryadh}
+[2019-07-03 17:17:39 513] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=835.0, posY=390.0}, destination=Ryadh}
+[2019-07-03 17:17:39 649] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@720844d4, destination=Ryadh}
+[2019-07-03 17:17:40 319] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5dee824a, destination=Ryadh}
+[2019-07-03 17:17:40 985] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@715323a8, destination=Ryadh}
+[2019-07-03 17:17:41 656] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@62591d29, destination=Ryadh}
+[2019-07-03 17:17:42 318] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@262aa546, destination=Ryadh}
+[2019-07-03 17:17:42 966] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=889.0, posY=325.0}, destination=Ryadh}
+[2019-07-03 17:17:42 985] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1c215ace, destination=Ryadh}
+[2019-07-03 17:17:43 650] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@43f853b2, destination=Ryadh}
+[2019-07-03 17:17:44 319] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7446a229, destination=Ryadh}
+[2019-07-03 17:17:44 642] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=862.0, posY=325.0}, destination=Ryadh}
+[2019-07-03 17:17:44 992] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@498619a2, destination=Ryadh}
+[2019-07-03 17:17:45 655] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=832.0, posY=320.0}, destination=Ryadh}
+[2019-07-03 17:17:45 669] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1d4f00ff, destination=Ryadh}
+[2019-07-03 17:17:46 333] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@fe335bb, destination=Ryadh}
+[2019-07-03 17:17:46 961] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=819.0, posY=320.0}, destination=Ryadh}
+[2019-07-03 17:17:47 186] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1eabbfbe, destination=Ryadh}
+[2019-07-03 17:17:47 854] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@153edc4, destination=Ryadh}
+[2019-07-03 17:17:47 984] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=796.0, posY=325.0}, destination=Ryadh}
+[2019-07-03 17:17:48 532] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7dff5d4a, destination=Ryadh}
+[2019-07-03 17:17:48 878] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=790.0, posY=322.0}, destination=Ryadh}
+[2019-07-03 17:17:49 068] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=790.0, posY=322.0}, destination=Ryadh}
+[2019-07-03 17:17:49 213] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@52a16b2f, destination=Ryadh}
+[2019-07-03 17:17:49 892] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@672a4a41, destination=Ryadh}
+[2019-07-03 17:17:50 072] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=850.0, posY=402.0}, destination=Ryadh}
+[2019-07-03 17:17:50 242] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=850.0, posY=402.0}, destination=Ryadh}
+[2019-07-03 17:17:50 483] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=850.0, posY=402.0}, destination=Ryadh}
+[2019-07-03 17:17:50 588] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@32917eed, destination=Ryadh}
+[2019-07-03 17:17:51 135] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=997.0, posY=407.0}, destination=Ryadh}
+[2019-07-03 17:17:51 269] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@338b10c2, destination=Ryadh}
+[2019-07-03 17:17:51 961] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@46b4e6e1, destination=Ryadh}
+[2019-07-03 17:17:52 636] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4b668263, destination=Ryadh}
+[2019-07-03 17:17:53 297] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2bd5be60, destination=Ryadh}
+[2019-07-03 17:17:53 988] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@9509d80, destination=Ryadh}
+[2019-07-03 17:17:54 659] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1c73ec32, destination=Ryadh}
+[2019-07-03 17:17:54 830] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1005.0, posY=338.0}, destination=Ryadh}
+[2019-07-03 17:17:55 329] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@540e1142, destination=Ryadh}
+[2019-07-03 17:17:55 996] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4df379d5, destination=Ryadh}
+[2019-07-03 17:17:56 664] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@365f84a0, destination=Ryadh}
+[2019-07-03 17:17:57 326] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@18646610, destination=Ryadh}
+[2019-07-03 17:17:57 997] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@aded05b, destination=Ryadh}
+[2019-07-03 17:17:58 663] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@a07496e, destination=Ryadh}
+[2019-07-03 17:17:58 824] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1197.0, posY=279.0}, destination=Ryadh}
+[2019-07-03 17:17:59 330] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@64eabdc3, destination=Ryadh}
+[2019-07-03 17:18:00 253] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@40083eee, destination=Ryadh}
+[2019-07-03 17:18:00 931] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@27ec69b4, destination=Ryadh}
+[2019-07-03 17:18:01 596] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4b34c60d, destination=Ryadh}
+[2019-07-03 17:18:02 263] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3fc807f2, destination=Ryadh}
+[2019-07-03 17:18:02 931] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4e1b677, destination=Ryadh}
+[2019-07-03 17:18:03 339] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1188.0, posY=288.0}, destination=Ryadh}
+[2019-07-03 17:18:03 603] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2bdb4d6e, destination=Ryadh}
+[2019-07-03 17:18:04 279] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@53a71bd9, destination=Ryadh}
+[2019-07-03 17:18:04 947] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5a721581, destination=Ryadh}
+[2019-07-03 17:18:05 896] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6ea0f6b0, destination=Ryadh}
+[2019-07-03 17:18:06 059] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1174.0, posY=281.0}, destination=Ryadh}
+[2019-07-03 17:18:06 708] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4e213a27, destination=Ryadh}
+[2019-07-03 17:18:07 381] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@74bf3a5e, destination=Ryadh}
+[2019-07-03 17:18:08 535] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1a5472ff, destination=Ryadh}
+[2019-07-03 17:18:09 210] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@71712671, destination=Ryadh}
+[2019-07-03 17:18:09 451] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1068.0, posY=279.0}, destination=Ryadh}
+[2019-07-03 17:18:09 888] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@51560799, destination=Ryadh}
+[2019-07-03 17:18:10 561] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@59f58544, destination=Ryadh}
+[2019-07-03 17:18:11 225] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1029ba5d, destination=Ryadh}
+[2019-07-03 17:18:11 893] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@308f0325, destination=Ryadh}
+[2019-07-03 17:18:12 566] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@37040026, destination=Ryadh}
+[2019-07-03 17:18:13 007] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1011.0, posY=285.0}, destination=Ryadh}
+[2019-07-03 17:18:13 233] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6d28617d, destination=Ryadh}
+[2019-07-03 17:18:13 896] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@68f6023b, destination=Ryadh}
+[2019-07-03 17:18:14 562] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@27a569ce, destination=Ryadh}
+[2019-07-03 17:18:15 227] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@503e2097, destination=Ryadh}
+[2019-07-03 17:18:15 896] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3b5b01f8, destination=Ryadh}
+[2019-07-03 17:18:16 041] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=885.0, posY=281.0}, destination=Ryadh}
+[2019-07-03 17:18:17 021] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@13dd7cd6, destination=Ryadh}
+[2019-07-03 17:18:17 678] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1008571c, destination=Ryadh}
+[2019-07-03 17:18:18 344] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4cf22f3, destination=Ryadh}
+[2019-07-03 17:18:19 011] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@e8142ed, destination=Ryadh}
+[2019-07-03 17:18:19 396] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=831.0, posY=285.0}, destination=Ryadh}
+[2019-07-03 17:18:19 683] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3f15e717, destination=Ryadh}
+[2019-07-03 17:18:20 364] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@68df8202, destination=Ryadh}
+[2019-07-03 17:18:21 028] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@225a9130, destination=Ryadh}
+[2019-07-03 17:18:21 694] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@28a11761, destination=Ryadh}
+[2019-07-03 17:18:21 824] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=778.0, posY=285.0}, destination=Ryadh}
+[2019-07-03 17:18:22 363] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5240a7fd, destination=Ryadh}
+[2019-07-03 17:18:23 024] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5cc218c2, destination=Ryadh}
+[2019-07-03 17:18:23 694] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@44451185, destination=Ryadh}
+[2019-07-03 17:18:24 360] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7cb69ddd, destination=Ryadh}
+[2019-07-03 17:18:24 846] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=678.0, posY=284.0}, destination=Ryadh}
+[2019-07-03 17:18:25 032] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@507743c9, destination=Ryadh}
+[2019-07-03 17:18:25 712] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@417fa9c3, destination=Ryadh}
+[2019-07-03 17:18:26 377] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@16cab42, destination=Ryadh}
+[2019-07-03 17:18:27 040] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4d2d805a, destination=Ryadh}
+[2019-07-03 17:18:27 710] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5a5a6791, destination=Ryadh}
+[2019-07-03 17:18:28 379] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@723005cd, destination=Ryadh}
+[2019-07-03 17:18:29 044] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1c1d96ee, destination=Ryadh}
+[2019-07-03 17:18:29 101] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=768.0, posY=234.0}, destination=Ryadh}
+[2019-07-03 17:18:29 711] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1c75a7c3, destination=Ryadh}
+[2019-07-03 17:18:30 378] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@281976b6, destination=Ryadh}
+[2019-07-03 17:18:31 044] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@405f3819, destination=Ryadh}
+[2019-07-03 17:18:31 710] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3f205693, destination=Ryadh}
+[2019-07-03 17:18:32 377] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2771e8ac, destination=Ryadh}
+[2019-07-03 17:18:33 043] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7c4a9e14, destination=Ryadh}
+[2019-07-03 17:18:33 709] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4320a627, destination=Ryadh}
+[2019-07-03 17:18:34 378] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4f00aaf5, destination=Ryadh}
+[2019-07-03 17:18:35 044] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@c1558c, destination=Ryadh}
+[2019-07-03 17:18:35 708] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@48ee788d, destination=Ryadh}
+[2019-07-03 17:18:36 377] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6b7a570a, destination=Ryadh}
+[2019-07-03 17:18:37 044] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2882c3db, destination=Ryadh}
+[2019-07-03 17:18:37 708] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@42cd03c2, destination=Ryadh}
+[2019-07-03 17:18:38 377] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3a9e4afd, destination=Ryadh}
+[2019-07-03 17:18:39 043] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1644135c, destination=Ryadh}
+[2019-07-03 17:18:39 050] INFO  client.impl.ClientProcessorImpl - Request{type=STOP_CONTROL, content=null, destination=Ryadh}
+[2019-07-03 17:18:58 417] INFO  client.impl.ClientProcessorImpl - Request{type=REQUEST_CONTROL, content=ScreenInformation{width=1920, height=1080}, destination=Ryadh}
+[2019-07-03 17:19:00 195] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@299dc61f, destination=Ryadh}
+[2019-07-03 17:19:01 506] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@36ca7f9d, destination=Ryadh}
+[2019-07-03 17:19:02 642] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@d87e59d, destination=Ryadh}
+[2019-07-03 17:19:03 821] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@b60daf5, destination=Ryadh}
+[2019-07-03 17:19:04 559] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1411.0, posY=60.0}, destination=Ryadh}
+[2019-07-03 17:19:05 034] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@30c16871, destination=Ryadh}
+[2019-07-03 17:19:06 294] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@52d2f4ca, destination=Ryadh}
+[2019-07-03 17:19:07 490] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@69c84f34, destination=Ryadh}
+[2019-07-03 17:19:08 714] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2804e125, destination=Ryadh}
+[2019-07-03 17:19:09 202] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1783.0, posY=12.0}, destination=Ryadh}
+[2019-07-03 17:19:10 019] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@a7bc6dc, destination=Ryadh}
+[2019-07-03 17:19:11 186] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@21ffe135, destination=Ryadh}
+[2019-07-03 17:19:12 365] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@564d5c2f, destination=Ryadh}
+[2019-07-03 17:19:13 248] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=660.0, posY=24.0}, destination=Ryadh}
+[2019-07-03 17:19:13 704] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@15ed4418, destination=Ryadh}
+[2019-07-03 17:19:14 904] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4420be6d, destination=Ryadh}
+[2019-07-03 17:19:16 072] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@74262cfc, destination=Ryadh}
+[2019-07-03 17:19:17 272] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=323.0, posY=27.0}, destination=Ryadh}
+[2019-07-03 17:19:18 147] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@60493d26, destination=Ryadh}
+[2019-07-03 17:19:19 315] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4ea85160, destination=Ryadh}
+[2019-07-03 17:19:20 445] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@328a874c, destination=Ryadh}
+[2019-07-03 17:19:21 592] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@9a7db3b, destination=Ryadh}
+[2019-07-03 17:19:21 923] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1568.0, posY=158.0}, destination=Ryadh}
+[2019-07-03 17:19:22 701] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5d5e6003, destination=Ryadh}
+[2019-07-03 17:19:23 810] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5fcb4d3, destination=Ryadh}
+[2019-07-03 17:19:24 237] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1035.0, posY=531.0}, destination=Ryadh}
+[2019-07-03 17:19:24 950] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5c9bd5bf, destination=Ryadh}
+[2019-07-03 17:19:26 040] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7d149f71, destination=Ryadh}
+[2019-07-03 17:19:27 131] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6d4dc1ad, destination=Ryadh}
+[2019-07-03 17:19:28 226] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7cf594f8, destination=Ryadh}
+[2019-07-03 17:19:29 374] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@c7b8210, destination=Ryadh}
+[2019-07-03 17:19:30 498] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@715295d7, destination=Ryadh}
+[2019-07-03 17:19:31 597] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6e03aff1, destination=Ryadh}
+[2019-07-03 17:19:32 668] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5dc29f95, destination=Ryadh}
+[2019-07-03 17:19:33 748] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@66d94e0f, destination=Ryadh}
+[2019-07-03 17:19:34 542] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=589.0, posY=287.0}, destination=Ryadh}
+[2019-07-03 17:19:34 862] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1603eb97, destination=Ryadh}
+[2019-07-03 17:19:35 961] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2a20b230, destination=Ryadh}
+[2019-07-03 17:19:37 084] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@69f58cec, destination=Ryadh}
+[2019-07-03 17:19:38 169] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2879b4b4, destination=Ryadh}
+[2019-07-03 17:19:39 264] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7b82ba4, destination=Ryadh}
+[2019-07-03 17:19:40 135] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=709.0, posY=368.0}, destination=Ryadh}
+[2019-07-03 17:19:40 336] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@55ab201a, destination=Ryadh}
+[2019-07-03 17:19:41 419] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7d7ff9dd, destination=Ryadh}
+[2019-07-03 17:19:42 496] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1b1e1c7c, destination=Ryadh}
+[2019-07-03 17:19:43 600] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@67976656, destination=Ryadh}
+[2019-07-03 17:19:44 576] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=709.0, posY=368.0}, destination=Ryadh}
+[2019-07-03 17:19:44 702] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@135ea65e, destination=Ryadh}
+[2019-07-03 17:19:45 797] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@42bc48f3, destination=Ryadh}
+[2019-07-03 17:19:46 927] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1f4e5fb9, destination=Ryadh}
+[2019-07-03 17:19:47 524] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=168.0, posY=243.0}, destination=Ryadh}
+[2019-07-03 17:19:47 708] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=168.0, posY=243.0}, destination=Ryadh}
+[2019-07-03 17:19:48 030] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@48fe9fe0, destination=Ryadh}
+[2019-07-03 17:19:49 116] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2146461d, destination=Ryadh}
+[2019-07-03 17:19:50 195] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@692f2f0a, destination=Ryadh}
+[2019-07-03 17:19:50 884] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=465.0, posY=215.0}, destination=Ryadh}
+[2019-07-03 17:19:51 292] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@599593b, destination=Ryadh}
+[2019-07-03 17:19:52 391] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@87c22fd, destination=Ryadh}
+[2019-07-03 17:19:53 471] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3ee8fbb8, destination=Ryadh}
+[2019-07-03 17:19:54 414] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=148.0, posY=204.0}, destination=Ryadh}
+[2019-07-03 17:19:54 555] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1b5688be, destination=Ryadh}
+[2019-07-03 17:19:54 599] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=148.0, posY=204.0}, destination=Ryadh}
+[2019-07-03 17:19:55 650] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@643cee9d, destination=Ryadh}
+[2019-07-03 17:19:56 741] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@179494fe, destination=Ryadh}
+[2019-07-03 17:19:57 852] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@10e1ea23, destination=Ryadh}
+[2019-07-03 17:19:58 947] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@63612a0d, destination=Ryadh}
+[2019-07-03 17:20:00 100] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6b9d1405, destination=Ryadh}
+[2019-07-03 17:20:00 265] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=383.0, posY=128.0}, destination=Ryadh}
+[2019-07-03 17:20:01 206] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@38430a7e, destination=Ryadh}
+[2019-07-03 17:20:01 614] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=383.0, posY=128.0}, destination=Ryadh}
+[2019-07-03 17:20:02 323] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@c8e7c31, destination=Ryadh}
+[2019-07-03 17:20:03 554] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2c3d149c, destination=Ryadh}
+[2019-07-03 17:20:04 912] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@e5cced6, destination=Ryadh}
+[2019-07-03 17:20:06 128] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@41a09102, destination=Ryadh}
+[2019-07-03 17:20:07 296] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@36db52ef, destination=Ryadh}
+[2019-07-03 17:20:08 471] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2c69bbb1, destination=Ryadh}
+[2019-07-03 17:20:09 704] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2a554ccd, destination=Ryadh}
+[2019-07-03 17:20:10 999] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@8a86d58, destination=Ryadh}
+[2019-07-03 17:20:12 375] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@f36f38d, destination=Ryadh}
+[2019-07-03 17:20:13 655] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@11b7152b, destination=Ryadh}
+[2019-07-03 17:20:15 079] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6c8718a2, destination=Ryadh}
+[2019-07-03 17:20:16 388] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5d5bf707, destination=Ryadh}
+[2019-07-03 17:20:17 627] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@79a6c27d, destination=Ryadh}
+[2019-07-03 17:20:18 845] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@62e902a7, destination=Ryadh}
+[2019-07-03 17:20:20 043] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6618efa2, destination=Ryadh}
+[2019-07-03 17:20:21 278] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7cbbd07, destination=Ryadh}
+[2019-07-03 17:20:22 467] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@197581d9, destination=Ryadh}
+[2019-07-03 17:20:23 650] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@40fcc449, destination=Ryadh}
+[2019-07-03 17:20:24 848] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5bcdfd73, destination=Ryadh}
+[2019-07-03 17:20:26 057] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@38f90b98, destination=Ryadh}
+[2019-07-03 17:20:27 283] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6aa73602, destination=Ryadh}
+[2019-07-03 17:20:28 483] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@74fcadfd, destination=Ryadh}
+[2019-07-03 17:20:28 494] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1871.0, posY=14.0}, destination=Ryadh}
+[2019-07-03 17:20:29 577] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@71513320, destination=Ryadh}
+[2019-07-03 17:20:30 681] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1cde5ed5, destination=Ryadh}
+[2019-07-03 17:20:31 762] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@f93273b, destination=Ryadh}
+[2019-07-03 17:20:32 856] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1305db1b, destination=Ryadh}
+[2019-07-03 17:20:33 232] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=149.0, posY=26.0}, destination=Ryadh}
+[2019-07-03 17:20:33 416] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=149.0, posY=26.0}, destination=Ryadh}
+[2019-07-03 17:20:33 960] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1e94bba4, destination=Ryadh}
+[2019-07-03 17:20:35 068] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@62517e65, destination=Ryadh}
+[2019-07-03 17:20:35 225] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=149.0, posY=26.0}, destination=Ryadh}
+[2019-07-03 17:20:36 173] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@26b4fef6, destination=Ryadh}
+[2019-07-03 17:20:37 276] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@37c2baaf, destination=Ryadh}
+[2019-07-03 17:20:38 387] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5a9766eb, destination=Ryadh}
+[2019-07-03 17:20:39 556] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@39218edc, destination=Ryadh}
+[2019-07-03 17:20:40 681] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@246b040d, destination=Ryadh}
+[2019-07-03 17:20:41 190] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=354.0, posY=34.0}, destination=Ryadh}
+[2019-07-03 17:20:41 841] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@264ad3ac, destination=Ryadh}
+[2019-07-03 17:20:42 957] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4bd2bdf8, destination=Ryadh}
+[2019-07-03 17:20:44 111] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@67b8f661, destination=Ryadh}
+[2019-07-03 17:20:45 259] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5cd66dcd, destination=Ryadh}
+[2019-07-03 17:20:46 556] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@57ba184e, destination=Ryadh}
+[2019-07-03 17:20:47 846] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@69b1a3f3, destination=Ryadh}
+[2019-07-03 17:20:49 335] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@36c01a83, destination=Ryadh}
+[2019-07-03 17:20:50 656] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@48f23af1, destination=Ryadh}
+[2019-07-03 17:20:51 978] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2e2fd96c, destination=Ryadh}
+[2019-07-03 17:20:53 259] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@40b0086e, destination=Ryadh}
+[2019-07-03 17:20:54 717] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@628fccc6, destination=Ryadh}
+[2019-07-03 17:20:56 011] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7bb85562, destination=Ryadh}
+[2019-07-03 17:20:57 323] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4e10492c, destination=Ryadh}
+[2019-07-03 17:20:58 731] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@35f6d365, destination=Ryadh}
+[2019-07-03 17:20:59 763] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1904.0, posY=12.0}, destination=Ryadh}
+[2019-07-03 17:20:59 994] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1691a2d6, destination=Ryadh}
+[2019-07-03 17:21:01 225] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@77330018, destination=Ryadh}
+[2019-07-03 17:21:02 486] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@391f9884, destination=Ryadh}
+[2019-07-03 17:21:03 635] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4a830547, destination=Ryadh}
+[2019-07-03 17:21:04 882] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@8f1787c, destination=Ryadh}
+[2019-07-03 17:21:06 055] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6b8d3a53, destination=Ryadh}
+[2019-07-03 17:21:07 391] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5809796f, destination=Ryadh}
+[2019-07-03 17:21:08 590] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5c227ea, destination=Ryadh}
+[2019-07-03 17:21:09 828] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@62bc5888, destination=Ryadh}
+[2019-07-03 17:21:11 137] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4239a634, destination=Ryadh}
+[2019-07-03 17:21:12 709] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@402737d4, destination=Ryadh}
+[2019-07-03 17:21:13 878] INFO  client.impl.ClientProcessorImpl - Request{type=PROVOKE_EVENT, content=MouseEvent{posX=1244.0, posY=662.0}, destination=Ryadh}
+[2019-07-03 17:21:13 938] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1e8ffff7, destination=Ryadh}
+[2019-07-03 17:21:15 228] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5a526018, destination=Ryadh}
+[2019-07-03 17:21:16 579] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1b5fc07c, destination=Ryadh}
+[2019-07-03 17:21:17 768] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1c2bb96e, destination=Ryadh}
+[2019-07-03 17:21:19 170] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@aca7489, destination=Ryadh}
+[2019-07-03 17:21:20 478] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@19d559e2, destination=Ryadh}
+[2019-07-03 17:21:21 716] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4a218a37, destination=Ryadh}
+[2019-07-03 17:21:23 056] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@50e9c20f, destination=Ryadh}
+[2019-07-03 17:21:24 290] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7e1be44b, destination=Ryadh}
+[2019-07-03 17:21:25 519] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@46f8ca53, destination=Ryadh}
+[2019-07-03 17:21:26 861] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@79e9fb44, destination=Ryadh}
+[2019-07-03 17:21:28 134] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@1922d8d0, destination=Ryadh}
+[2019-07-03 17:21:29 340] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@48079468, destination=Ryadh}
+[2019-07-03 17:21:30 559] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@223ae6e6, destination=Ryadh}
+[2019-07-03 17:21:31 845] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@61c1b2e2, destination=Ryadh}
+[2019-07-03 17:21:33 525] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3ba8ad1a, destination=Ryadh}
+[2019-07-03 17:21:34 765] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3b381a56, destination=Ryadh}
+[2019-07-03 17:21:36 387] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6b6f93b8, destination=Ryadh}
+[2019-07-03 17:21:37 618] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5c1b78cb, destination=Ryadh}
+[2019-07-03 17:21:39 347] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3ddab3ae, destination=Ryadh}
+[2019-07-03 17:21:40 550] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@d636ed1, destination=Ryadh}
+[2019-07-03 17:21:41 766] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@25743741, destination=Ryadh}
+[2019-07-03 17:21:42 928] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@389eb669, destination=Ryadh}
+[2019-07-03 17:21:44 069] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@17237bfa, destination=Ryadh}
+[2019-07-03 17:21:45 332] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@24715c4c, destination=Ryadh}
+[2019-07-03 17:21:47 124] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@5e4165ba, destination=Ryadh}
+[2019-07-03 17:21:48 813] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@2e394837, destination=Ryadh}
+[2019-07-03 17:21:50 366] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7861d440, destination=Ryadh}
+[2019-07-03 17:21:51 512] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4326bc, destination=Ryadh}
+[2019-07-03 17:21:52 578] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@45f269ea, destination=Ryadh}
+[2019-07-03 17:21:53 691] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@14bc208a, destination=Ryadh}
+[2019-07-03 17:21:54 789] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4ab0bb28, destination=Ryadh}
+[2019-07-03 17:21:55 912] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@4e5b3220, destination=Ryadh}
+[2019-07-03 17:21:57 007] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@6c60d909, destination=Ryadh}
+[2019-07-03 17:21:58 148] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@24d7c538, destination=Ryadh}
+[2019-07-03 17:21:59 264] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@3101972a, destination=Ryadh}
+[2019-07-03 17:22:00 379] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7bc70e39, destination=Ryadh}
+[2019-07-03 17:22:01 494] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@12b19415, destination=Ryadh}
+[2019-07-03 17:22:02 593] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@165f52d6, destination=Ryadh}
+[2019-07-03 17:22:03 708] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@7b93106a, destination=Ryadh}
+[2019-07-03 17:22:04 832] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@59d51122, destination=Ryadh}
+[2019-07-03 17:22:05 956] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@28de6b5d, destination=Ryadh}
+[2019-07-03 17:22:07 095] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@59a20a6d, destination=Ryadh}
+[2019-07-03 17:22:08 233] INFO  client.impl.ClientProcessorImpl - Request{type=SEND_FRAME, content=model.IFrame@204867b8, destination=Ryadh}
+[2019-07-03 17:22:09 284] INFO  client.impl.ClientProcessorImpl - Request{type=DISCONNECT, content=null, destination=null}
+[2019-07-03 17:22:09 284] INFO  client.impl.ClientProcessorImpl - Disconnection from User : 5
+[2019-07-03 17:22:09 285] INFO  client.impl.ClientProcessorImpl - Sending Response (REMOVE) to User : 1 From : 5
+[2019-07-03 17:24:50 386] INFO  client.impl.ClientProcessorImpl - Request{type=STOP_CONTROL, content=null, destination=Ryadh}
+[2019-07-03 17:24:54 989] INFO  client.impl.ClientProcessorImpl - Request{type=DISCONNECT, content=null, destination=null}
+[2019-07-03 17:24:54 989] INFO  client.impl.ClientProcessorImpl - Disconnection from User : 1

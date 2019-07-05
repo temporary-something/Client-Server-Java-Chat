@@ -2,7 +2,7 @@ package network;
 
 import java.io.ObjectInputStream;
 
-public interface InputStreamReader {
+public interface InputStreamReader extends Runnable {
 
     void open(ObjectInputStream ois);
     void close();
