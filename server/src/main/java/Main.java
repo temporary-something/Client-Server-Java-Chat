@@ -10,6 +10,7 @@ public class Main {
             System.err.println("Too few arguments, the correct syntax is : <ip address> <port> ...");
             System.out.println("Eclipse");
             System.out.println("321");
+            System.out.println("Added after merge");
             System.exit(1);
         }
 
