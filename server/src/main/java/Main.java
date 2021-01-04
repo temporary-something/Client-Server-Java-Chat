@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         if (args.length < 2) {
-            System.err.println("Too few arguments, the correct syntax is : <ip address> <port> ...");
+            System.err.println("Too few arguments, the correct syntax is : <ip address> <port> .123");
             System.exit(1);
         }
 
